@@ -1,0 +1,16 @@
+name: Lint README
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: Lint README.md
+        run: markdownlint README.md
