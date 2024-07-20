@@ -1,6 +1,10 @@
 {
     "version": "0.2",
     "language": "en,es",
+    "dictionaries": [
+        "en",
+        "es"
+    ],
     "ignorePaths": [
         "**/node_modules/**",
         "**/dist/**",
