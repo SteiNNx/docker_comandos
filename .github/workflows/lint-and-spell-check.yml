@@ -28,28 +28,25 @@ jobs:
 
       # Paso 3: Ejecutar markdownlint para validar el archivo README.md
       - name: Lint README.md
+        id: lint
         run: markdownlint README.md
 
       # Paso 4: Ejecutar cspell para verificar la ortografía en el archivo README.md
       - name: Run spell check
+        id: spell_check
         run: cspell "README.md" --config cSpell.json
 
-    # Definir los outputs del trabajo
-    outputs:
-      lint_status: ${{ steps.lint.outcome }}
-      spell_check_status: ${{ steps.spell_check.outcome }}
-
-    # Agregar un paso de resumen de resultados
-    - name: Summarize results
-      if: always()
-      run: |
-        if [ "${{ steps.lint.outcome }}" == "failure" ]; then
-          echo "Markdown linting failed. Please fix the issues before merging."
-        else
-          echo "Markdown linting passed."
-        fi
-        if [ "${{ steps.spell_check.outcome }}" == "failure" ]; then
-          echo "Spell check failed. Please correct the spelling errors."
-        else
-          echo "Spell check passed."
-        fi
+      # Paso 5: Agregar un paso de resumen de resultados
+      - name: Summarize results
+        if: always()
+        run: |
+          if [ "${{ steps.lint.outcome }}" == "failure" ]; then
+            echo "Markdown linting failed. Please fix the issues before merging."
+          else
+            echo "Markdown linting passed."
+          fi
+          if [ "${{ steps.spell_check.outcome }}" == "failure" ]; then
+            echo "Spell check failed. Please correct the spelling errors."
+          else
+            echo "Spell check passed."
+          fi
