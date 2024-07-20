@@ -1,0 +1,56 @@
+name: Lint and Spell Check README.md
+
+# Disparar el flujo de trabajo en eventos de push y pull request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  lint-and-spell-check:
+    # Definir la última versión de Ubuntu como el runner
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Clonar el repositorio
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Paso 2: Instalar herramientas necesarias usando npm
+      - name: Install linters
+        run: |
+          npm install -g markdownlint-cli
+          npm install -g cspell
+          npm install -g @cspell/dict-es-es
+          cspell link add @cspell/dict-es-es
+
+      # Paso 3: Ejecutar markdownlint para validar el archivo README.md
+      - name: Lint README.md
+        run: markdownlint README.md
+
+      # Paso 4: Ejecutar cspell para verificar la ortografía en el archivo README.md
+      - name: Run spell check
+        run: cspell "README.md" --config cSpell.json
+
+    # Definir los outputs del trabajo
+    outputs:
+      lint_status: ${{ steps.lint.outcome }}
+      spell_check_status: ${{ steps.spell_check.outcome }}
+
+    # Agregar un paso de resumen de resultados
+    - name: Summarize results
+      if: always()
+      run: |
+        if [ "${{ steps.lint.outcome }}" == "failure" ]; then
+          echo "Markdown linting failed. Please fix the issues before merging."
+        else
+          echo "Markdown linting passed."
+        fi
+        if [ "${{ steps.spell_check.outcome }}" == "failure" ]; then
+          echo "Spell check failed. Please correct the spelling errors."
+        else
+          echo "Spell check passed."
+        fi
