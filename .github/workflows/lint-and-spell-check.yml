@@ -11,7 +11,6 @@ on:
 
 jobs:
   lint-and-spell-check:
-    # Definir la última versión de Ubuntu como el runner
     runs-on: ubuntu-latest
 
     steps:
