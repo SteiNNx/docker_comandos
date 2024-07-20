@@ -20,10 +20,11 @@ jobs:
         uses: actions/checkout@v4
 
       # Paso 2: Instalar cspell globalmente usando npm
-      - name: Install cspell and dictionaries
+      - name: Install cspell and dictionary
         run: |
           npm install -g cspell
-          npm install --save-dev cspell-dict-en cspell-dict-es
+          npm install -g @cspell/dict-es-es
+          cspell link add @cspell/dict-es-es
 
       # Paso 3: Ejecutar verificación ortográfica en el archivo README.md
       - name: Run spell check
