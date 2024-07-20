@@ -4,10 +4,10 @@ name: Orthography Check README.md
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   spell-check:
