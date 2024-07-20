@@ -19,4 +19,4 @@ jobs:
 
       # Paso 3: Ejecutar verificación ortográfica en el archivo README.md
       - name: Run spell check
-        run: cspell "README.md"
+        run: cspell "README.md" --config cSpell.json
