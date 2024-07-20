@@ -1,163 +1,163 @@
 # 📘🐳 **Holy Docker: Tu Guía Definitiva**
 
-# Propósito
-Bienvenido 🐳,este repositorio es un recurso abierto y colaborativo diseñado especialmente para la comunidad hispanohablante. Nuestro objetivo es proporcionar una guía completa y accesible sobre Docker, facilitando el aprendizaje y la implementación de contenedores en diversos entornos.
+## Propósito
+
+Bienvenido 🐳,este repositorio es un recurso abierto para la comunidad hispanohablante. Nuestro objetivo es proporcionar una guía completa y accesible sobre Docker, facilitando el aprendizaje y la implementación de contenedores en diversos entornos.
 
 - [📘🐳 **Holy Docker: Tu Guía Definitiva**](#-holy-docker-tu-guía-definitiva)
-- [Propósito](#propósito)
-- [Docker](#docker)
-  - [¿Qué es Docker?](#qué-es-docker)
-  - [¿Qué es un Contenedor?](#qué-es-un-contenedor)
-  - [Beneficios de Usar Docker](#beneficios-de-usar-docker)
-- [Docker Compose](#docker-compose)
-  - [¿Qué es Docker Compose?](#qué-es-docker-compose)
-  - [¿Qué es un Archivo `docker-compose.yml`?](#qué-es-un-archivo-docker-composeyml)
-    - [Componentes del Archivo `docker-compose.yml`](#componentes-del-archivo-docker-composeyml)
-    - [Ejemplo Completo de `docker-compose.yml`](#ejemplo-completo-de-docker-composeyml)
-    - [Explicación del Ejemplo](#explicación-del-ejemplo)
-    - [Beneficios de Usar un Archivo `docker-compose.yml`](#beneficios-de-usar-un-archivo-docker-composeyml)
-- [Imagen y Contenedor](#imagen-y-contenedor)
-  - [Imagen](#imagen)
-  - [Contenedor](#contenedor)
-  - [Resumen](#resumen)
-- [Comandos Docker con Ejemplos Detallados](#comandos-docker-con-ejemplos-detallados)
-  - [Docker Exec](#docker-exec)
-    - [Ejecución de Comandos con `docker exec`](#ejecución-de-comandos-con-docker-exec)
-      - [Ejemplo 1: Ejecutar un Comando Simple](#ejemplo-1-ejecutar-un-comando-simple)
-      - [Ejemplo 2: Acceder a un Entorno Interactivo](#ejemplo-2-acceder-a-un-entorno-interactivo)
-      - [Nota Importante](#nota-importante)
-  - [Docker Logs](#docker-logs)
-    - [Visualización de Logs con `docker logs`](#visualización-de-logs-con-docker-logs)
-      - [Ejemplo 1: Ver todos los Logs de un Contenedor](#ejemplo-1-ver-todos-los-logs-de-un-contenedor)
-      - [Ejemplo 2: Ver las Últimas Líneas de los Logs](#ejemplo-2-ver-las-últimas-líneas-de-los-logs)
-      - [Nota Importante](#nota-importante-1)
-  - [Docker Top](#docker-top)
-    - [Monitoreo de Procesos con `docker top`](#monitoreo-de-procesos-con-docker-top)
-      - [Ejemplo 1: Ver los Procesos Activos en un Contenedor](#ejemplo-1-ver-los-procesos-activos-en-un-contenedor)
-      - [Ejemplo 2: Ver los Procesos en un Contenedor con un Nombre Específico](#ejemplo-2-ver-los-procesos-en-un-contenedor-con-un-nombre-específico)
-      - [Nota Importante](#nota-importante-2)
-  - [Docker Stats](#docker-stats)
-    - [Monitoreo de Recursos con `docker stats`](#monitoreo-de-recursos-con-docker-stats)
-      - [Ejemplo 1: Ver Información de Uso de Recursos de un Contenedor](#ejemplo-1-ver-información-de-uso-de-recursos-de-un-contenedor)
-      - [Ejemplo 2: Ver Información de Uso de Recursos de Múltiples Contenedores](#ejemplo-2-ver-información-de-uso-de-recursos-de-múltiples-contenedores)
-      - [Nota Importante](#nota-importante-3)
-    - [Comandos Docker con Ejemplos Detallados](#comandos-docker-con-ejemplos-detallados-1)
-  - [Docker Inspect](#docker-inspect)
-    - [Recuperación de Información con `docker inspect`](#recuperación-de-información-con-docker-inspect)
-      - [Ejemplo 1: Inspeccionar un Contenedor o Imagen](#ejemplo-1-inspeccionar-un-contenedor-o-imagen)
-      - [Ejemplo 2: Enviar la Información a un Archivo](#ejemplo-2-enviar-la-información-a-un-archivo)
-      - [Ejemplo 3: Obtener Información Específica (IP del Contenedor)](#ejemplo-3-obtener-información-específica-ip-del-contenedor)
-      - [Nota Importante](#nota-importante-4)
-  - [Docker Image](#docker-image)
-    - [Opciones del Comando `docker image`](#opciones-del-comando-docker-image)
-    - [Alternativas a Comandos Comunes](#alternativas-a-comandos-comunes)
-  - [Docker Container](#docker-container)
-    - [Opciones del Comando `docker container`](#opciones-del-comando-docker-container)
-    - [Alternativas a Comandos Comunes](#alternativas-a-comandos-comunes-1)
-  - [Docker --help](#docker---help)
-    - [Ejemplo de Uso del Comando `docker container ls --help`](#ejemplo-de-uso-del-comando-docker-container-ls---help)
-    - [Ejemplo de Uso del Comando `docker image ls --help`](#ejemplo-de-uso-del-comando-docker-image-ls---help)
-    - [Ejemplo de Uso del Comando `docker run --help`](#ejemplo-de-uso-del-comando-docker-run---help)
-  - [Docker Info](#docker-info)
-    - [Ejemplo de Uso](#ejemplo-de-uso)
-  - [Docker Version](#docker-version)
-    - [Ejemplo de Uso](#ejemplo-de-uso-1)
-  - [Docker Run](#docker-run)
-    - [Ejemplo de Uso](#ejemplo-de-uso-2)
-- [Comandos Docker Image](#comandos-docker-image)
-  - [Buscar Imagen Docker por CMD](#buscar-imagen-docker-por-cmd)
-    - [Ejemplo de Uso](#ejemplo-de-uso-3)
-    - [Opciones del Comando `docker search`](#opciones-del-comando-docker-search)
-    - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones)
-  - [Descargar Imagen](#descargar-imagen)
-    - [Ejemplo de Uso](#ejemplo-de-uso-4)
-    - [Opciones del Comando `docker pull`](#opciones-del-comando-docker-pull)
-    - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones-1)
-  - [Ver Imágenes en Repositorio Local](#ver-imágenes-en-repositorio-local)
-    - [Ejemplo de Uso](#ejemplo-de-uso-5)
-    - [Opciones del Comando `docker images`](#opciones-del-comando-docker-images)
-    - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones-2)
-  - [Filtrar Imágenes](#filtrar-imágenes)
-    - [Ejemplo de Uso](#ejemplo-de-uso-6)
-    - [Descripción del Comando](#descripción-del-comando)
-    - [Opciones del Comando `docker images -f`](#opciones-del-comando-docker-images--f)
-    - [Ejemplos de Uso](#ejemplos-de-uso)
-    - [Notas](#notas)
-  - [Eliminar una Imagen](#eliminar-una-imagen)
-    - [Descripción del Comando](#descripción-del-comando-1)
-    - [Opciones del Comando `docker rmi`](#opciones-del-comando-docker-rmi)
-    - [Ejemplos de Uso](#ejemplos-de-uso-1)
-    - [Importante](#importante)
-    - [Notas](#notas-1)
-  - [Borrar Todas las Imágenes](#borrar-todas-las-imágenes)
-    - [Descripción del Comando](#descripción-del-comando-2)
-    - [Detalles del Comando](#detalles-del-comando)
-    - [Ejemplo de Uso](#ejemplo-de-uso-7)
-    - [Importante](#importante-1)
-    - [Precauciones](#precauciones)
-  - [Historial de Cambios de una Imagen](#historial-de-cambios-de-una-imagen)
-    - [Descripción del Comando](#descripción-del-comando-3)
-    - [Detalles del Comando](#detalles-del-comando-1)
-    - [Ejemplo de Uso](#ejemplo-de-uso-8)
-    - [Salida del Comando](#salida-del-comando)
-    - [Ejemplo de Salida](#ejemplo-de-salida)
-    - [Uso Típico](#uso-típico)
-    - [Nota](#nota)
-- [Comandos Contenedores](#comandos-contenedores)
-  - [Crear un Contenedor](#crear-un-contenedor)
-    - [Descripción del Comando](#descripción-del-comando-4)
-    - [Ejemplo de Uso](#ejemplo-de-uso-9)
-    - [Crear un Contenedor con Nombre](#crear-un-contenedor-con-nombre)
-    - [Crear un Contenedor Interactivo](#crear-un-contenedor-interactivo)
-    - [Crear un Contenedor en Segundo Plano (Background)](#crear-un-contenedor-en-segundo-plano-background)
-    - [Crear un Contenedor con Eliminación Automática](#crear-un-contenedor-con-eliminación-automática)
-  - [Ingresar a un Contenedor en Modo Interactivo](#ingresar-a-un-contenedor-en-modo-interactivo)
-    - [Descripción del Comando](#descripción-del-comando-5)
-    - [Uso](#uso)
-  - [Salir de un Contenedor sin Detener la Ejecución](#salir-de-un-contenedor-sin-detener-la-ejecución)
-    - [Descripción](#descripción)
-  - [Detener un Contenedor](#detener-un-contenedor)
-    - [Descripción del Comando](#descripción-del-comando-6)
-    - [Uso](#uso-1)
-  - [Detener Todos los Contenedores](#detener-todos-los-contenedores)
-    - [Descripción del Comando](#descripción-del-comando-7)
-    - [Uso](#uso-2)
-  - [Ver Contenedores en Ejecución](#ver-contenedores-en-ejecución)
-    - [Descripción de los Comandos](#descripción-de-los-comandos)
-    - [Uso](#uso-3)
-  - [Ver Contenedores Detenidos](#ver-contenedores-detenidos)
-    - [Descripción del Comando](#descripción-del-comando-8)
-    - [Uso](#uso-4)
-  - [Ver Último Contenedor Arrancado](#ver-último-contenedor-arrancado)
-    - [Descripción del Comando](#descripción-del-comando-9)
-    - [Uso](#uso-5)
-  - [Ver Últimos Contenedores que se Han Ejecutado (Cantidad)](#ver-últimos-contenedores-que-se-han-ejecutado-cantidad)
-    - [Descripción del Comando](#descripción-del-comando-10)
-    - [Uso](#uso-6)
-  - [Ver IDs de Contenedores](#ver-ids-de-contenedores)
-    - [Descripción de los Comandos](#descripción-de-los-comandos-1)
-    - [Uso](#uso-7)
-  - [Ver Tamaño del Contenedor](#ver-tamaño-del-contenedor)
-    - [Descripción del Comando](#descripción-del-comando-11)
-    - [Uso](#uso-8)
-  - [Filtrar Lista de Contenedores (`--filter`, -f)](#filtrar-lista-de-contenedores---filter--f)
-    - [Opciones de Filtros](#opciones-de-filtros)
-    - [Ejemplos de Uso](#ejemplos-de-uso-2)
-      - [Filtrar por Nombre](#filtrar-por-nombre)
-  - [Eliminar un Contenedor](#eliminar-un-contenedor)
-    - [Opción 1: Eliminar por ID](#opción-1-eliminar-por-id)
-    - [Opción 2: Eliminar por Nombre](#opción-2-eliminar-por-nombre)
+  - [Propósito](#propósito)
+  - [Docker](#docker)
+    - [¿Qué es Docker?](#qué-es-docker)
+    - [¿Qué es un Contenedor?](#qué-es-un-contenedor)
+    - [Beneficios de Usar Docker](#beneficios-de-usar-docker)
+  - [Docker Compose](#docker-compose)
+    - [¿Qué es Docker Compose?](#qué-es-docker-compose)
+    - [¿Qué es un Archivo `docker-compose.yml`?](#qué-es-un-archivo-docker-composeyml)
+      - [Componentes del Archivo `docker-compose.yml`](#componentes-del-archivo-docker-composeyml)
+      - [Ejemplo Completo de `docker-compose.yml`](#ejemplo-completo-de-docker-composeyml)
+      - [Explicación del Ejemplo](#explicación-del-ejemplo)
+      - [Beneficios de Usar un Archivo `docker-compose.yml`](#beneficios-de-usar-un-archivo-docker-composeyml)
+  - [Imagen y Contenedor](#imagen-y-contenedor)
+    - [Imagen](#imagen)
+    - [Contenedor](#contenedor)
+    - [Resumen](#resumen)
+    - [Comandos Docker con Ejemplos Detallados](#comandos-docker-con-ejemplos-detallados)
+      - [Docker Exec](#docker-exec)
+        - [Ejecución de Comandos con `docker exec`](#ejecución-de-comandos-con-docker-exec)
+          - [Ejemplo 1: Ejecutar un Comando Simple](#ejemplo-1-ejecutar-un-comando-simple)
+          - [Ejemplo 2: Acceder a un Entorno Interactivo](#ejemplo-2-acceder-a-un-entorno-interactivo)
+          - [Nota Importante](#nota-importante)
+      - [Docker Logs](#docker-logs)
+        - [Visualización de Logs con `docker logs`](#visualización-de-logs-con-docker-logs)
+          - [Ejemplo 1: Ver todos los Logs de un Contenedor](#ejemplo-1-ver-todos-los-logs-de-un-contenedor)
+          - [Ejemplo 2: Ver las Últimas Líneas de los Logs](#ejemplo-2-ver-las-últimas-líneas-de-los-logs)
+          - [Nota Importante](#nota-importante-1)
+      - [Docker Top](#docker-top)
+        - [Monitoreo de Procesos con `docker top`](#monitoreo-de-procesos-con-docker-top)
+          - [Ejemplo 1: Ver los Procesos Activos en un Contenedor](#ejemplo-1-ver-los-procesos-activos-en-un-contenedor)
+          - [Ejemplo 2: Ver los Procesos en un Contenedor con un Nombre Específico](#ejemplo-2-ver-los-procesos-en-un-contenedor-con-un-nombre-específico)
+          - [Nota Importante](#nota-importante-2)
+      - [Docker Stats](#docker-stats)
+        - [Monitoreo de Recursos con `docker stats`](#monitoreo-de-recursos-con-docker-stats)
+          - [Ejemplo 1: Ver Información de Uso de Recursos de un Contenedor](#ejemplo-1-ver-información-de-uso-de-recursos-de-un-contenedor)
+          - [Ejemplo 2: Ver Información de Uso de Recursos de Múltiples Contenedores](#ejemplo-2-ver-información-de-uso-de-recursos-de-múltiples-contenedores)
+          - [Nota Importante](#nota-importante-3)
+      - [Docker Inspect](#docker-inspect)
+        - [Recuperación de Información con `docker inspect`](#recuperación-de-información-con-docker-inspect)
+          - [Ejemplo 1: Inspeccionar un Contenedor o Imagen](#ejemplo-1-inspeccionar-un-contenedor-o-imagen)
+        - [Ejemplo 2: Enviar la Información a un Archivo](#ejemplo-2-enviar-la-información-a-un-archivo)
+        - [Ejemplo 3: Obtener Información Específica (IP del Contenedor)](#ejemplo-3-obtener-información-específica-ip-del-contenedor)
+        - [Nota Importante](#nota-importante-4)
+      - [Docker Image](#docker-image)
+        - [Opciones del Comando `docker image`](#opciones-del-comando-docker-image)
+        - [Alternativas a Comandos Comunes](#alternativas-a-comandos-comunes)
+      - [Docker Container](#docker-container)
+        - [Opciones del Comando `docker container`](#opciones-del-comando-docker-container)
+        - [Alternativas a Comandos Comunes](#alternativas-a-comandos-comunes-1)
+      - [Docker --help](#docker---help)
+        - [Ejemplo de Uso del Comando `docker container ls --help`](#ejemplo-de-uso-del-comando-docker-container-ls---help)
+        - [Ejemplo de Uso del Comando `docker image ls --help`](#ejemplo-de-uso-del-comando-docker-image-ls---help)
+        - [Ejemplo de Uso del Comando `docker run --help`](#ejemplo-de-uso-del-comando-docker-run---help)
+      - [Docker Info](#docker-info)
+        - [Ejemplo de Uso](#ejemplo-de-uso)
+      - [Docker Version](#docker-version)
+        - [Ejemplo de Uso](#ejemplo-de-uso-1)
+      - [Docker Run](#docker-run)
+        - [Ejemplo de Uso](#ejemplo-de-uso-2)
+    - [Comandos Docker Image](#comandos-docker-image)
+      - [Buscar Imagen Docker por CMD](#buscar-imagen-docker-por-cmd)
+        - [Ejemplo de Uso](#ejemplo-de-uso-3)
+        - [Opciones del Comando `docker search`](#opciones-del-comando-docker-search)
+        - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones)
+      - [Descargar Imagen](#descargar-imagen)
+        - [Ejemplo de Uso](#ejemplo-de-uso-4)
+        - [Opciones del Comando `docker pull`](#opciones-del-comando-docker-pull)
+        - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones-1)
+      - [Ver Imágenes en Repositorio Local](#ver-imágenes-en-repositorio-local)
+        - [Ejemplo de Uso](#ejemplo-de-uso-5)
+        - [Opciones del Comando `docker images`](#opciones-del-comando-docker-images)
+        - [Ejemplos de Uso de Opciones](#ejemplos-de-uso-de-opciones-2)
+      - [Filtrar Imágenes](#filtrar-imágenes)
+        - [Ejemplo de Uso](#ejemplo-de-uso-6)
+        - [Descripción del Comando](#descripción-del-comando)
+        - [Opciones del Comando `docker images -f`](#opciones-del-comando-docker-images--f)
+        - [Ejemplos de Uso](#ejemplos-de-uso)
+        - [Notas](#notas)
+      - [Eliminar una Imagen](#eliminar-una-imagen)
+        - [Descripción del Comando](#descripción-del-comando-1)
+        - [Opciones del Comando `docker rmi`](#opciones-del-comando-docker-rmi)
+        - [Ejemplos de Uso](#ejemplos-de-uso-1)
+        - [Importante](#importante)
+        - [Notas](#notas-1)
+      - [Borrar Todas las Imágenes](#borrar-todas-las-imágenes)
+        - [Descripción del Comando](#descripción-del-comando-2)
+        - [Detalles del Comando](#detalles-del-comando)
+        - [Ejemplo de Uso](#ejemplo-de-uso-7)
+        - [Importante](#importante-1)
+        - [Precauciones](#precauciones)
+      - [Historial de Cambios de una Imagen](#historial-de-cambios-de-una-imagen)
+        - [Descripción del Comando](#descripción-del-comando-3)
+        - [Detalles del Comando](#detalles-del-comando-1)
+        - [Ejemplo de Uso](#ejemplo-de-uso-8)
+        - [Salida del Comando](#salida-del-comando)
+        - [Ejemplo de Salida](#ejemplo-de-salida)
+        - [Uso Típico](#uso-típico)
+        - [Nota](#nota)
+  - [Comandos Contenedores](#comandos-contenedores)
+    - [Crear un Contenedor](#crear-un-contenedor)
+      - [Descripción del Comando](#descripción-del-comando-4)
+      - [Ejemplo de Uso](#ejemplo-de-uso-9)
+      - [Crear un Contenedor con Nombre](#crear-un-contenedor-con-nombre)
+      - [Crear un Contenedor Interactivo](#crear-un-contenedor-interactivo)
+      - [Crear un Contenedor en Segundo Plano (Background)](#crear-un-contenedor-en-segundo-plano-background)
+      - [Crear un Contenedor con Eliminación Automática](#crear-un-contenedor-con-eliminación-automática)
+    - [Ingresar a un Contenedor en Modo Interactivo](#ingresar-a-un-contenedor-en-modo-interactivo)
+      - [Descripción del Comando](#descripción-del-comando-5)
+      - [Uso](#uso)
+    - [Salir de un Contenedor sin Detener la Ejecución](#salir-de-un-contenedor-sin-detener-la-ejecución)
+      - [Descripción](#descripción)
+    - [Detener un Contenedor](#detener-un-contenedor)
+      - [Descripción del Comando](#descripción-del-comando-6)
+      - [Uso](#uso-1)
+    - [Detener Todos los Contenedores](#detener-todos-los-contenedores)
+      - [Descripción del Comando](#descripción-del-comando-7)
+      - [Uso](#uso-2)
+    - [Ver Contenedores en Ejecución](#ver-contenedores-en-ejecución)
+      - [Descripción de los Comandos](#descripción-de-los-comandos)
+      - [Uso](#uso-3)
+    - [Ver Contenedores Detenidos](#ver-contenedores-detenidos)
+      - [Descripción del Comando](#descripción-del-comando-8)
+      - [Uso](#uso-4)
+    - [Ver Último Contenedor Arrancado](#ver-último-contenedor-arrancado)
+      - [Descripción del Comando](#descripción-del-comando-9)
+      - [Uso](#uso-5)
+    - [Ver Últimos Contenedores que se Han Ejecutado (Cantidad)](#ver-últimos-contenedores-que-se-han-ejecutado-cantidad)
+      - [Descripción del Comando](#descripción-del-comando-10)
+      - [Uso](#uso-6)
+    - [Ver IDs de Contenedores](#ver-ids-de-contenedores)
+      - [Descripción de los Comandos](#descripción-de-los-comandos-1)
+      - [Uso](#uso-7)
+    - [Ver Tamaño del Contenedor](#ver-tamaño-del-contenedor)
+      - [Descripción del Comando](#descripción-del-comando-11)
+      - [Uso](#uso-8)
+    - [Filtrar Lista de Contenedores (`--filter`, -f)](#filtrar-lista-de-contenedores---filter--f)
+      - [Opciones de Filtros](#opciones-de-filtros)
+      - [Ejemplos de Uso](#ejemplos-de-uso-2)
+        - [Filtrar por Nombre](#filtrar-por-nombre)
+    - [Eliminar un Contenedor](#eliminar-un-contenedor)
+      - [Opción 1: Eliminar por ID](#opción-1-eliminar-por-id)
+      - [Opción 2: Eliminar por Nombre](#opción-2-eliminar-por-nombre)
     - [Eliminar un Contenedor en Ejecución](#eliminar-un-contenedor-en-ejecución)
     - [Eliminar Todos los Contenedores](#eliminar-todos-los-contenedores)
     - [Historial Cambios Contenedor](#historial-cambios-contenedor)
       - [Opción 1: `docker diff`](#opción-1-docker-diff)
       - [Opción 2: `docker container diff`](#opción-2-docker-container-diff)
-- [Puertos Docker](#puertos-docker)
+  - [Puertos Docker](#puertos-docker)
     - [Convertir Puertos en Públicos](#convertir-puertos-en-públicos)
       - [Confirmar Puertos Públicos](#confirmar-puertos-públicos)
     - [Crear un Contenedor con un Puerto Específico](#crear-un-contenedor-con-un-puerto-específico)
       - [Ejemplo con Nombre Personalizado](#ejemplo-con-nombre-personalizado)
-- [Redes Docker](#redes-docker)
+  - [Redes Docker](#redes-docker)
     - [Redes Predeterminadas](#redes-predeterminadas)
     - [Ver Lista de Redes en Docker](#ver-lista-de-redes-en-docker)
     - [Obtener Dirección IP de un Contenedor](#obtener-dirección-ip-de-un-contenedor)
@@ -169,56 +169,56 @@ Bienvenido 🐳,este repositorio es un recurso abierto y colaborativo diseñado 
       - [Bridge (Red por Defecto)](#bridge-red-por-defecto)
       - [Red Personalizada](#red-personalizada)
     - [Borrar una Red](#borrar-una-red)
-- [Volúmenes en Docker](#volúmenes-en-docker)
-  - [¿Por qué usar Volúmenes?](#por-qué-usar-volúmenes)
-  - [Crear un Volumen](#crear-un-volumen)
-  - [Listar Volúmenes](#listar-volúmenes)
-  - [Obtener Información de un Volumen](#obtener-información-de-un-volumen)
-  - [Crear un Directorio Compartido (Carpeta)](#crear-un-directorio-compartido-carpeta)
-  - [Compartir un Volumen entre Contenedores](#compartir-un-volumen-entre-contenedores)
-  - [Crear Volumen de Forma Independiente](#crear-volumen-de-forma-independiente)
-    - [Nombre Personalizado](#nombre-personalizado)
-    - [Permiso de Lectura](#permiso-de-lectura)
-    - [Uso en Windows](#uso-en-windows)
-  - [Borrar un Volumen Específico](#borrar-un-volumen-específico)
-  - [Borrar Volúmenes Inactivos o No Asociados](#borrar-volúmenes-inactivos-o-no-asociados)
-- [Manipulación de Imagen y Contenedor](#manipulación-de-imagen-y-contenedor)
-  - [Modificar una Imagen](#modificar-una-imagen)
-    - [1. Crear un Contenedor Basado en una Imagen](#1-crear-un-contenedor-basado-en-una-imagen)
-    - [2. Realizar Cambios en el Contenedor](#2-realizar-cambios-en-el-contenedor)
-    - [3. Crear una Imagen a Partir del Contenedor Modificado](#3-crear-una-imagen-a-partir-del-contenedor-modificado)
-  - [Crear una Imagen](#crear-una-imagen)
-    - [Crear una Imagen Manualmente](#crear-una-imagen-manualmente)
-    - [Ejemplo de Creación de Imagen](#ejemplo-de-creación-de-imagen)
-  - [Consejos Adicionales](#consejos-adicionales)
-- [Dockerfile](#dockerfile)
-  - [Introducción](#introducción)
-  - [Ejemplo Básico](#ejemplo-básico)
-  - [Crear una Imagen con Dockerfile](#crear-una-imagen-con-dockerfile)
-    - [Estructura Básica del Dockerfile](#estructura-básica-del-dockerfile)
-    - [Ejemplo de Dockerfile](#ejemplo-de-dockerfile)
-  - [Comando `RUN`](#comando-run)
-  - [Comando `CMD`](#comando-cmd)
-  - [Comando `ENTRYPOINT`](#comando-entrypoint)
-  - [Comando `WORKDIR`](#comando-workdir)
-  - [Comando `COPY` y `ADD`](#comando-copy-y-add)
-    - [`COPY`](#copy)
-    - [`ADD`](#add)
-  - [Comando `ENV`](#comando-env)
-  - [Comando `ARG`](#comando-arg)
-  - [Comando `EXPOSE`](#comando-expose)
-  - [Comando `VOLUME`](#comando-volume)
-- [Docker Hub](#docker-hub)
-  - [Subir una Imagen a Docker Hub](#subir-una-imagen-a-docker-hub)
-    - [1. Iniciar Sesión en Docker Hub](#1-iniciar-sesión-en-docker-hub)
-    - [2. Etiquetar la Imagen](#2-etiquetar-la-imagen)
-    - [3. Subir la Imagen a Docker Hub](#3-subir-la-imagen-a-docker-hub)
-    - [Resumen](#resumen-1)
-- [Docker Compose](#docker-compose-1)
+  - [Volúmenes en Docker](#volúmenes-en-docker)
+    - [¿Por qué usar Volúmenes?](#por-qué-usar-volúmenes)
+    - [Crear un Volumen](#crear-un-volumen)
+    - [Listar Volúmenes](#listar-volúmenes)
+    - [Obtener Información de un Volumen](#obtener-información-de-un-volumen)
+    - [Crear un Directorio Compartido (Carpeta)](#crear-un-directorio-compartido-carpeta)
+    - [Compartir un Volumen entre Contenedores](#compartir-un-volumen-entre-contenedores)
+    - [Crear Volumen de Forma Independiente](#crear-volumen-de-forma-independiente)
+      - [Nombre Personalizado](#nombre-personalizado)
+      - [Permiso de Lectura](#permiso-de-lectura)
+      - [Uso en Windows](#uso-en-windows)
+    - [Borrar un Volumen Específico](#borrar-un-volumen-específico)
+    - [Borrar Volúmenes Inactivos o No Asociados](#borrar-volúmenes-inactivos-o-no-asociados)
+  - [Manipulación de Imagen y Contenedor](#manipulación-de-imagen-y-contenedor)
+    - [Modificar una Imagen](#modificar-una-imagen)
+      - [1. Crear un Contenedor Basado en una Imagen](#1-crear-un-contenedor-basado-en-una-imagen)
+      - [2. Realizar Cambios en el Contenedor](#2-realizar-cambios-en-el-contenedor)
+      - [3. Crear una Imagen a Partir del Contenedor Modificado](#3-crear-una-imagen-a-partir-del-contenedor-modificado)
+    - [Crear una Imagen](#crear-una-imagen)
+      - [Crear una Imagen Manualmente](#crear-una-imagen-manualmente)
+      - [Ejemplo de Creación de Imagen](#ejemplo-de-creación-de-imagen)
+    - [Consejos Adicionales](#consejos-adicionales)
+  - [Dockerfile](#dockerfile)
+    - [Introducción](#introducción)
+    - [Ejemplo Básico](#ejemplo-básico)
+    - [Crear una Imagen con Dockerfile](#crear-una-imagen-con-dockerfile)
+      - [Estructura Básica del Dockerfile](#estructura-básica-del-dockerfile)
+      - [Ejemplo de Dockerfile](#ejemplo-de-dockerfile)
+    - [Comando `RUN`](#comando-run)
+    - [Comando `CMD`](#comando-cmd)
+    - [Comando `ENTRYPOINT`](#comando-entrypoint)
+    - [Comando `WORKDIR`](#comando-workdir)
+    - [Comando `COPY` y `ADD`](#comando-copy-y-add)
+      - [`COPY`](#copy)
+      - [`ADD`](#add)
+    - [Comando `ENV`](#comando-env)
+    - [Comando `ARG`](#comando-arg)
+    - [Comando `EXPOSE`](#comando-expose)
+    - [Comando `VOLUME`](#comando-volume)
+  - [Docker Hub](#docker-hub)
+    - [Subir una Imagen a Docker Hub](#subir-una-imagen-a-docker-hub)
+      - [1. Iniciar Sesión en Docker Hub](#1-iniciar-sesión-en-docker-hub)
+      - [2. Etiquetar la Imagen](#2-etiquetar-la-imagen)
+      - [3. Subir la Imagen a Docker Hub](#3-subir-la-imagen-a-docker-hub)
+      - [Resumen](#resumen-1)
+  - [Docker Compose](#docker-compose-1)
     - [¿Qué es Docker Compose?](#qué-es-docker-compose-1)
     - [Instalación de Docker Compose](#instalación-de-docker-compose)
-      - [En Windows y macOS:](#en-windows-y-macos)
-      - [En Linux:](#en-linux)
+      - [En Windows y macOS](#en-windows-y-macos)
+      - [En Linux](#en-linux)
     - [Commandos Docker-Compose](#commandos-docker-compose)
       - [`docker-compose up`](#docker-compose-up)
         - [¿Qué Hace el Comando `docker-compose up`?](#qué-hace-el-comando-docker-compose-up)
@@ -278,69 +278,76 @@ Bienvenido 🐳,este repositorio es un recurso abierto y colaborativo diseñado 
     - [1. **version**](#1-version)
     - [2. **services**](#2-services)
       - [Ejemplo Básico](#ejemplo-básico-1)
-  - [Construcción y Ejecución de Docker-Compose](#construcción-y-ejecución-de-docker-compose)
-    - [Construir y Ejecutar Servicios](#construir-y-ejecutar-servicios)
-    - [Construcción de Servicios](#construcción-de-servicios)
-  - [Listar Micro Servicios](#listar-micro-servicios)
-  - [Enlazar Contenedores, Servicios, Puertos y Variables](#enlazar-contenedores-servicios-puertos-y-variables)
-  - [Volúmenes en Docker Compose](#volúmenes-en-docker-compose)
-  - [Redes en Docker Compose](#redes-en-docker-compose)
-  - [Cambiar Nombre de Archivo y Proyecto de Docker-Compose](#cambiar-nombre-de-archivo-y-proyecto-de-docker-compose)
-    - [Ocupar Fichero Docker-Compose con Otro Nombre](#ocupar-fichero-docker-compose-con-otro-nombre)
-    - [Cambiar Nombre del Proyecto](#cambiar-nombre-del-proyecto)
-    - [Ejecutar con Nuevas Opciones](#ejecutar-con-nuevas-opciones)
-    - [Ver Lista con Nuevo Nombre de Proyecto](#ver-lista-con-nuevo-nombre-de-proyecto)
-- [Docker Registry: Creación, Uso y Almacenamiento](#docker-registry-creación-uso-y-almacenamiento)
-  - [Crear un Registro de Imágenes](#crear-un-registro-de-imágenes)
-    - [Descargar la Imagen del Registro](#descargar-la-imagen-del-registro)
-    - [Crear un Contenedor de Registro](#crear-un-contenedor-de-registro)
-  - [Subir y Descargar Imágenes](#subir-y-descargar-imágenes)
-    - [Etiquetar la Imagen](#etiquetar-la-imagen)
-      - [Ejemplo:](#ejemplo)
-    - [Subir Imagen al Registro](#subir-imagen-al-registro)
-      - [Ejemplo:](#ejemplo-1)
+    - [Construcción y Ejecución de Docker-Compose](#construcción-y-ejecución-de-docker-compose)
+      - [Construir y Ejecutar Servicios](#construir-y-ejecutar-servicios)
+      - [Construcción de Servicios](#construcción-de-servicios)
+    - [Listar Micro Servicios](#listar-micro-servicios)
+    - [Enlazar Contenedores, Servicios, Puertos y Variables](#enlazar-contenedores-servicios-puertos-y-variables)
+    - [Volúmenes en Docker Compose](#volúmenes-en-docker-compose)
+    - [Redes en Docker Compose](#redes-en-docker-compose)
+    - [Cambiar Nombre de Archivo y Proyecto de Docker-Compose](#cambiar-nombre-de-archivo-y-proyecto-de-docker-compose)
+      - [Ocupar Fichero Docker-Compose con Otro Nombre](#ocupar-fichero-docker-compose-con-otro-nombre)
+      - [Cambiar Nombre del Proyecto](#cambiar-nombre-del-proyecto)
+      - [Ejecutar con Nuevas Opciones](#ejecutar-con-nuevas-opciones)
+      - [Ver Lista con Nuevo Nombre de Proyecto](#ver-lista-con-nuevo-nombre-de-proyecto)
+  - [Docker Registry: Creación, Uso y Almacenamiento](#docker-registry-creación-uso-y-almacenamiento)
+    - [Crear un Registro de Imágenes](#crear-un-registro-de-imágenes)
+      - [Descargar la Imagen del Registro](#descargar-la-imagen-del-registro)
+      - [Crear un Contenedor de Registro](#crear-un-contenedor-de-registro)
+      - [Subir y Descargar Imágenes](#subir-y-descargar-imágenes)
+        - [Etiquetar la Imagen](#etiquetar-la-imagen)
+          - [Ejemplo](#ejemplo)
+      - [Subir Imagen al Registro](#subir-imagen-al-registro)
+        - [Ejemplo](#ejemplo-1)
     - [Descargar Imagen del Registro](#descargar-imagen-del-registro)
-      - [Ejemplo:](#ejemplo-2)
-  - [Almacenamiento en Docker Registry](#almacenamiento-en-docker-registry)
-    - [Ubicación Predeterminada del Almacenamiento](#ubicación-predeterminada-del-almacenamiento)
-    - [Configurar Ubicación Personalizada del Almacenamiento](#configurar-ubicación-personalizada-del-almacenamiento)
-      - [Ejemplo:](#ejemplo-3)
-    - [Configuración Adicional y Recomendaciones](#configuración-adicional-y-recomendaciones)
+      - [Ejemplo](#ejemplo-2)
+    - [Almacenamiento en Docker Registry](#almacenamiento-en-docker-registry)
+      - [Ubicación Predeterminada del Almacenamiento](#ubicación-predeterminada-del-almacenamiento)
+      - [Configurar Ubicación Personalizada del Almacenamiento](#configurar-ubicación-personalizada-del-almacenamiento)
+        - [Ejemplo](#ejemplo-3)
+      - [Configuración Adicional y Recomendaciones](#configuración-adicional-y-recomendaciones)
   - [Kubernetes](#kubernetes)
     - [Contribuye](#contribuye)
 
-# Docker
+## Docker
 
-## ¿Qué es Docker?
+### ¿Qué es Docker?
+
 Docker es una plataforma diseñada para crear, implementar y ejecutar aplicaciones en contenedores ligeros y portables. Los contenedores permiten que las aplicaciones y sus dependencias se empaqueten juntas, asegurando que se ejecuten de manera consistente en cualquier entorno que tenga Docker instalado, independientemente del sistema operativo subyacente.
 
-## ¿Qué es un Contenedor?
+### ¿Qué es un Contenedor?
+
 Un contenedor es una "caja" que contiene todo lo necesario para ejecutar una aplicación: el código de la aplicación, las bibliotecas, dependencias y configuraciones necesarias. Esto garantiza que la aplicación se comporte de la misma manera sin importar dónde se ejecute, eliminando problemas de compatibilidad entre diferentes entornos de desarrollo, prueba y producción.
 
-## Beneficios de Usar Docker
+### Beneficios de Usar Docker
+
 - **Portabilidad**: Docker permite que las aplicaciones se ejecuten de manera uniforme en diferentes sistemas operativos y plataformas.
 - **Aislamiento**: Cada contenedor funciona de manera aislada, evitando conflictos de dependencias entre aplicaciones.
 - **Escalabilidad**: Docker facilita el escalamiento horizontal, permitiendo ejecutar múltiples instancias de contenedores de una manera eficiente.
 - **Eficiencia**: Los contenedores comparten el mismo kernel del sistema operativo, lo que los hace más ligeros y rápidos que las máquinas virtuales tradicionales.
 
-# Docker Compose
+## Docker Compose
 
-## ¿Qué es Docker Compose?
+### ¿Qué es Docker Compose?
+
 Docker Compose es una herramienta que permite definir y gestionar aplicaciones multi-contenedor. Con Docker Compose, puedes definir un entorno completo con múltiples servicios (como bases de datos, aplicaciones web y servicios de backend) en un solo archivo docker-compose.yml y luego iniciar todo el entorno con un solo comando.
 
-## ¿Qué es un Archivo `docker-compose.yml`?
+### ¿Qué es un Archivo `docker-compose.yml`?
+
 Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML utilizado por Docker Compose para definir y ejecutar aplicaciones multi-contenedor. En este archivo, puedes especificar todos los servicios que componen tu aplicación, así como sus configuraciones, redes y volúmenes necesarios.
 
-### Componentes del Archivo `docker-compose.yml`
+#### Componentes del Archivo `docker-compose.yml`
 
 1. **Version**:
    - La versión del esquema de Compose que estás utilizando. Diferentes versiones soportan diferentes características.
+
    ```yaml
    version: '3.8'
    ```
 
 2. **Services (Servicios)**:
    - Aquí defines los diferentes servicios que conforman tu aplicación. Cada servicio representa un contenedor de Docker.
+
    ```yaml
    services:
      web:
@@ -351,6 +358,7 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
 
 3. **Build (Construcción)**:
    - Especifica cómo construir la imagen de Docker para el servicio. Puede ser un directorio con un Dockerfile o una imagen existente.
+
    ```yaml
    services:
      web:
@@ -368,7 +376,7 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
 
 5. **Ports (Puertos)**:
    - Mapea puertos del contenedor a puertos en el host. Esto es útil para exponer servicios al exterior.
-   
+
    ```yaml
    services:
      web:
@@ -378,6 +386,7 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
 
 6. **Volumes (Volúmenes)**:
    - Monta volúmenes para persistencia de datos y compartir archivos entre el contenedor y el host.
+
    ```yaml
    services:
      db:
@@ -387,6 +396,7 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
 
 7. **Environment (Variables de Entorno)**:
    - Define variables de entorno que se pasarán al contenedor. Útil para configurar el comportamiento del servicio.
+
    ```yaml
    services:
      web:
@@ -394,8 +404,9 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
          - NODE_ENV=development
    ```
 
-4. **Networks (Redes)**:
+8. **Networks (Redes)**:
    - Define redes personalizadas para que los servicios puedan comunicarse entre sí de manera aislada.
+
    ```yaml
    services:
      web:
@@ -406,8 +417,9 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
          - backend
    ```
 
-5. **Depends_on (Dependencias)**:
+9. **Depends_on (Dependencias)**:
    - Especifica dependencias entre servicios, asegurando que ciertos servicios se inicien antes que otros.
+
    ```yaml
    services:
      web:
@@ -415,7 +427,8 @@ Un archivo `docker-compose.yml` es un archivo de configuración en formato YAML 
          - db
    ```
 
-### Ejemplo Completo de `docker-compose.yml`
+#### Ejemplo Completo de `docker-compose.yml`
+
 A continuación, un ejemplo más completo que incluye varios de los componentes mencionados:
 
 ```yaml
@@ -452,7 +465,8 @@ networks:
   backend:
 ```
 
-### Explicación del Ejemplo
+#### Explicación del Ejemplo
+
 - **version**: Usa la versión 3.8 del esquema de Compose.
 - **services**: Define dos servicios: `web` y `db`.
   - **web**: Construye la imagen desde el Dockerfile en el directorio actual, mapea el puerto 3000, monta el directorio de la aplicación y establece una variable de entorno. Depende del servicio `db` y está conectado a la red `frontend`.
@@ -460,39 +474,43 @@ networks:
 - **volumes**: Define un volumen llamado `mongo-data` para persistir los datos de MongoDB.
 - **networks**: Define dos redes: `frontend` y `backend`.
 
-### Beneficios de Usar un Archivo `docker-compose.yml`
+#### Beneficios de Usar un Archivo `docker-compose.yml`
+
 - **Consistencia**: Define toda la configuración de tu aplicación en un solo archivo, asegurando que cualquier persona que ejecute el archivo obtenga el mismo entorno.
 - **Facilidad de Uso**: Un solo comando (`docker-compose up`) puede iniciar todos los servicios necesarios para tu aplicación.
 - **Aislamiento**: Cada servicio se ejecuta en su propio contenedor, evitando conflictos entre dependencias.
 - **Escalabilidad**: Puedes escalar los servicios fácilmente especificando el número de instancias que deseas ejecutar.
 
-# Imagen y Contenedor
+## Imagen y Contenedor
 
 Docker es una herramienta que facilita la distribución y ejecución de "Máquinas" virtualizadas.
 
-## Imagen
+### Imagen
+
 - **Definición**: Una imagen es un paquete de software que contiene todo lo necesario para ejecutar una aplicación, incluidos el código, las bibliotecas, las dependencias y las configuraciones.
 - **Uso**: Las imágenes son plantillas estáticas que se distribuyen y se utilizan para crear contenedores.
 
-## Contenedor
+### Contenedor
+
 - **Definición**: Un contenedor es una instancia en ejecución de una imagen. Contiene todo lo que necesita la aplicación para funcionar y se ejecuta de manera aislada del sistema anfitrión y de otros contenedores.
 - **Uso**: Desde una sola imagen, se pueden crear múltiples contenedores, cada uno ejecutándose de manera independiente.
 
-## Resumen
+### Resumen
+
 - **Imágenes**: Son plantillas reutilizables y distribuidas que contienen todo lo necesario para la aplicación.
 - **Contenedores**: Son instancias ejecutables de las imágenes que proporcionan un entorno aislado y consistente para la aplicación.
 
 Desde una única imagen, puedes crear múltiples contenedores, aprovechando al máximo la eficiencia y la escalabilidad que Docker ofrece.
 
-# Comandos Docker con Ejemplos Detallados
+### Comandos Docker con Ejemplos Detallados
 
-## Docker Exec
+#### Docker Exec
 
 El comando `exec` es una herramienta de administración de contenedores que permite ejecutar comandos dentro de un contenedor que ya está en ejecución. Este comando es particularmente útil cuando necesitas interactuar con un contenedor que no tiene un entorno interactivo preconfigurado.
 
-### Ejecución de Comandos con `docker exec`
+##### Ejecución de Comandos con `docker exec`
 
-#### Ejemplo 1: Ejecutar un Comando Simple
+###### Ejemplo 1: Ejecutar un Comando Simple
 
 Puedes ejecutar un comando simple dentro de un contenedor especificando su ID o nombre. Por ejemplo, para imprimir "hola-mundo" dentro de un contenedor llamado `ubuntu`:
 
@@ -501,6 +519,7 @@ docker exec ubuntu echo hola-mundo
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 1
 [XXXX@XXX ~]# docker exec ubuntu echo hola-mundo
@@ -509,7 +528,7 @@ hola-mundo
 
 Este comando imprime "hola-mundo" en la salida estándar del contenedor `ubuntu`.
 
-#### Ejemplo 2: Acceder a un Entorno Interactivo
+###### Ejemplo 2: Acceder a un Entorno Interactivo
 
 Para acceder a un entorno de shell interactivo dentro de un contenedor en ejecución, puedes usar la opción `-it`. Esto es útil para realizar tareas de administración o depuración en tiempo real. Por ejemplo, para iniciar una sesión bash interactiva dentro de un contenedor llamado `Nombre_Contenedor`:
 
@@ -518,6 +537,7 @@ docker exec -it Nombre_Contenedor bash
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 2
 [XXXX@XXX ~]# docker exec -it Nombre_Contenedor bash
@@ -526,20 +546,20 @@ root@Nombre_Contenedor:/#
 
 Este comando te proporciona un terminal interactivo dentro del contenedor, permitiéndote ejecutar comandos directamente.
 
-#### Nota Importante
+###### Nota Importante
 
 - **Requisitos**: El contenedor debe estar en ejecución para usar `docker exec`.
 - **Flexibilidad**: Puedes ejecutar cualquier comando que sea válido en el entorno del contenedor, no solo `bash` o `echo`.
 
 Utilizar `docker exec` es fundamental para la administración diaria de contenedores, permitiéndote interactuar y gestionar contenedores de manera eficiente sin necesidad de reiniciarlos o configurar accesos adicionales.
 
-## Docker Logs
+#### Docker Logs
 
 El comando `logs` permite ver la salida de un contenedor en ejecución, lo cual es útil para monitorear y depurar aplicaciones que se ejecutan en segundo plano.
 
-### Visualización de Logs con `docker logs`
+##### Visualización de Logs con `docker logs`
 
-#### Ejemplo 1: Ver todos los Logs de un Contenedor
+###### Ejemplo 1: Ver todos los Logs de un Contenedor
 
 Puedes ver todos los logs de un contenedor especificando su ID o nombre. Por ejemplo, para ver los logs de un contenedor llamado `mi_contenedor`:
 
@@ -548,6 +568,7 @@ docker logs mi_contenedor
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 1
 [XXXX@XXX ~]# docker logs mi_contenedor
@@ -559,7 +580,7 @@ docker logs mi_contenedor
 
 Este comando muestra toda la salida que el contenedor `mi_contenedor` ha generado desde que comenzó a ejecutarse.
 
-#### Ejemplo 2: Ver las Últimas Líneas de los Logs
+###### Ejemplo 2: Ver las Últimas Líneas de los Logs
 
 Para evitar que se muestren todos los logs y centrarse en las últimas líneas que son más relevantes, puedes usar la opción `--tail` seguida del número de líneas que deseas ver. Por ejemplo, para ver las últimas 20 líneas de los logs de un contenedor con el ID `1234asd`:
 
@@ -568,6 +589,7 @@ docker logs 1234asd --tail 20
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 2
 [XXXX@XXX ~]# docker logs 1234asd --tail 20
@@ -579,20 +601,20 @@ docker logs 1234asd --tail 20
 
 Este comando muestra solo las últimas 20 líneas de los logs del contenedor `1234asd`, ayudando a concentrarse en los eventos más recientes.
 
-#### Nota Importante
+###### Nota Importante
 
 - **Requisitos**: El contenedor debe estar en ejecución o haber estado en ejecución para que los logs estén disponibles.
 - **Flexibilidad**: Puedes usar otras opciones como `--follow` para seguir los logs en tiempo real o `--since` para ver los logs generados desde un momento específico.
 
 Utilizar `docker logs` es esencial para monitorear el comportamiento y la salida de tus contenedores, permitiéndote detectar y solucionar problemas de manera eficiente.
 
-## Docker Top
+#### Docker Top
 
 El comando `top` es una herramienta de administración de contenedores que permite identificar cuál es el proceso que más recursos consume dentro de un contenedor. Este comando es útil para monitorear el rendimiento y diagnosticar problemas en contenedores en ejecución.
 
-### Monitoreo de Procesos con `docker top`
+##### Monitoreo de Procesos con `docker top`
 
-#### Ejemplo 1: Ver los Procesos Activos en un Contenedor
+###### Ejemplo 1: Ver los Procesos Activos en un Contenedor
 
 Puedes usar `docker top` para listar todos los procesos activos dentro de un contenedor especificando su ID o nombre. Por ejemplo, para ver los procesos en un contenedor llamado `ubuntu`:
 
@@ -601,6 +623,7 @@ docker top ubuntu
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 1
 [XXXX@XXX ~]# docker top ubuntu
@@ -610,7 +633,7 @@ root                1234                5678                0                   
 
 Este comando muestra una lista de procesos en el contenedor `ubuntu`, incluyendo detalles como UID (User ID), PID (Process ID), PPID (Parent Process ID), uso de CPU (C), hora de inicio (STIME), TTY (terminal asociado), tiempo de CPU (TIME) y el comando ejecutado (CMD).
 
-#### Ejemplo 2: Ver los Procesos en un Contenedor con un Nombre Específico
+###### Ejemplo 2: Ver los Procesos en un Contenedor con un Nombre Específico
 
 Para obtener información sobre los procesos en un contenedor con un nombre específico, como `my_container`, puedes usar el siguiente comando:
 
@@ -619,6 +642,7 @@ docker top my_container
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 2
 [XXXX@XXX ~]# docker top my_container
@@ -628,20 +652,20 @@ root                2345                6789                1                   
 
 Este comando muestra una lista de procesos en el contenedor `my_container`, proporcionando una visión detallada de qué procesos están corriendo y su consumo de recursos.
 
-#### Nota Importante
+###### Nota Importante
 
 - **Requisitos**: El contenedor debe estar en ejecución para usar `docker top`.
 - **Usos**: `docker top` es útil para el monitoreo en tiempo real y para detectar procesos que puedan estar consumiendo recursos excesivos, ayudando en la optimización y resolución de problemas en entornos de contenedores.
 
 Utilizar `docker top` es esencial para la administración efectiva de contenedores, permitiendo un análisis detallado del rendimiento y el comportamiento de los procesos dentro del contenedor.
 
-## Docker Stats
+#### Docker Stats
 
 El comando `stats` es una herramienta de administración de contenedores que permite ver información en tiempo real sobre el uso de recursos de un contenedor, como CPU y memoria, entre otros. Este comando es muy útil para monitorear el rendimiento y la salud de los contenedores en ejecución.
 
-### Monitoreo de Recursos con `docker stats`
+##### Monitoreo de Recursos con `docker stats`
 
-#### Ejemplo 1: Ver Información de Uso de Recursos de un Contenedor
+###### Ejemplo 1: Ver Información de Uso de Recursos de un Contenedor
 
 Puedes usar `docker stats` para mostrar estadísticas en tiempo real de un contenedor especificando su ID o nombre. Por ejemplo, para ver las estadísticas de un contenedor llamado `mi_contenedor`:
 
@@ -650,6 +674,7 @@ docker stats mi_contenedor
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 1
 [XXXX@XXX ~]# docker stats mi_contenedor
@@ -659,7 +684,7 @@ CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/
 
 Este comando muestra estadísticas en tiempo real del contenedor `mi_contenedor`, incluyendo el uso de CPU, uso de memoria, tráfico de red, I/O de bloques y el número de procesos activos (PIDS).
 
-#### Ejemplo 2: Ver Información de Uso de Recursos de Múltiples Contenedores
+###### Ejemplo 2: Ver Información de Uso de Recursos de Múltiples Contenedores
 
 Para obtener estadísticas de múltiples contenedores en ejecución, puedes simplemente ejecutar `docker stats` sin especificar un contenedor. Esto mostrará las estadísticas de todos los contenedores activos:
 
@@ -668,6 +693,7 @@ docker stats
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 2
 [XXXX@XXX ~]# docker stats
@@ -678,22 +704,20 @@ abcd1234efgh   otro_contenedor  0.01%     22.3MiB / 1.95GiB     1.12%     800B /
 
 Este comando proporciona una vista consolidada del uso de recursos de todos los contenedores en ejecución, lo cual es útil para tener una visión general del rendimiento de todos los contenedores en tu entorno.
 
-#### Nota Importante
+###### Nota Importante
 
 - **Requisitos**: El contenedor debe estar en ejecución para usar `docker stats`.
 - **Flexibilidad**: Puedes utilizar filtros y opciones adicionales para personalizar la salida de `docker stats`, como especificar un formato de salida personalizado usando la opción `--format`.
 
 Utilizar `docker stats` es crucial para el monitoreo continuo y la gestión de recursos de los contenedores, ayudando a asegurar que los contenedores operen dentro de los límites de recursos y a identificar rápidamente cualquier problema de rendimiento.
 
-### Comandos Docker con Ejemplos Detallados
-
-## Docker Inspect
+#### Docker Inspect
 
 El comando `inspect` permite recuperar información detallada de una imagen o contenedor, incluyendo sus propiedades y características. Este comando es extremadamente útil para obtener un análisis profundo de los contenedores o imágenes en tu entorno.
 
-### Recuperación de Información con `docker inspect`
+##### Recuperación de Información con `docker inspect`
 
-#### Ejemplo 1: Inspeccionar un Contenedor o Imagen
+###### Ejemplo 1: Inspeccionar un Contenedor o Imagen
 
 Puedes usar `docker inspect` para obtener información detallada de un contenedor o imagen especificando su ID o nombre. Por ejemplo, para inspeccionar un contenedor llamado `mi_contenedor`:
 
@@ -702,6 +726,7 @@ docker inspect mi_contenedor
 ```
 
 **Resultado:**
+
 ```json
 [
     {
@@ -737,7 +762,7 @@ docker inspect mi_contenedor
 
 Este comando proporciona una gran cantidad de información sobre el contenedor `mi_contenedor`, incluyendo su ID, fecha de creación, estado, ID de imagen, nombre, configuraciones de red y más.
 
-#### Ejemplo 2: Enviar la Información a un Archivo
+##### Ejemplo 2: Enviar la Información a un Archivo
 
 Debido a la cantidad de información que `docker inspect` puede devolver, es recomendable enviar la salida a un archivo para su posterior inspección. Por ejemplo, para inspeccionar un contenedor llamado `mi_contenedor` y guardar la información en un archivo `info_contenedor.txt`:
 
@@ -746,13 +771,14 @@ docker inspect mi_contenedor > info_contenedor.txt
 ```
 
 **Resultado:**
+
 ```bash
 # Se crea un archivo llamado info_contenedor.txt con la información detallada del contenedor
 ```
 
 Este comando guarda toda la información detallada del contenedor `mi_contenedor` en el archivo `info_contenedor.txt`.
 
-#### Ejemplo 3: Obtener Información Específica (IP del Contenedor)
+##### Ejemplo 3: Obtener Información Específica (IP del Contenedor)
 
 Puedes usar `docker inspect` con la opción `--format` para recuperar información específica. Por ejemplo, para obtener la dirección IP de un contenedor llamado `mi_contenedor`:
 
@@ -761,6 +787,7 @@ docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}
 ```
 
 **Resultado:**
+
 ```bash
 # Ejemplo 3
 [XXXX@XXX ~]# docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mi_contenedor
@@ -769,18 +796,18 @@ docker inspect --format='{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}
 
 Este comando devuelve la dirección IP del contenedor `mi_contenedor`.
 
-#### Nota Importante
+##### Nota Importante
 
 - **Formato JSON**: La información proporcionada por `docker inspect` se entrega en formato JSON, lo que facilita su análisis y procesamiento con herramientas automatizadas.
 - **Flexibilidad**: Puedes personalizar la salida usando la opción `--format` para recuperar solo la información que necesitas, lo cual es útil para scripts y automatización.
 
 Utilizar `docker inspect` es esencial para obtener una visión detallada y comprensiva de las propiedades y configuraciones de tus contenedores e imágenes, permitiéndote gestionar y diagnosticar tu entorno Docker de manera eficiente.
 
-## Docker Image
+#### Docker Image
 
 El comando `docker image` sirve para administrar imágenes de Docker, agrupando todos los comandos relacionados con las imágenes. A continuación, se presentan las opciones y sus descripciones:
 
-### Opciones del Comando `docker image`
+##### Opciones del Comando `docker image`
 
 | Comando | Descripción |
 |:-------:|:------------|
@@ -797,7 +824,7 @@ El comando `docker image` sirve para administrar imágenes de Docker, agrupando 
 | save    | Guardar una o más imágenes en un archivo tar (transmitidas a STDOUT por defecto) |
 | tag     | Crear una etiqueta TARGET_IMAGE que haga referencia a SOURCE_IMAGE |
 
-### Alternativas a Comandos Comunes
+##### Alternativas a Comandos Comunes
 
 El comando `docker image` puede ser considerado una alternativa a ciertos comandos de Docker. A continuación se presentan algunas equivalencias:
 
@@ -808,11 +835,11 @@ El comando `docker image` puede ser considerado una alternativa a ciertos comand
 
 Estas alternativas pueden simplificar la administración de imágenes al utilizar un conjunto coherente de comandos bajo `docker image`.
 
-## Docker Container
+#### Docker Container
 
 Al igual que `docker image`, el comando `docker container` agrupa todos los comandos relacionados con los contenedores. A continuación, se presentan las opciones y sus descripciones:
 
-### Opciones del Comando `docker container`
+##### Opciones del Comando `docker container`
 
 | Comando  | Descripción |
 |:--------:|:------------|
@@ -841,7 +868,7 @@ Al igual que `docker image`, el comando `docker container` agrupa todos los coma
 | update   | Actualizar la configuración de uno o más contenedores. |
 | wait     | Bloquear hasta que uno o más contenedores se detengan, luego imprimir sus códigos de salida. |
 
-### Alternativas a Comandos Comunes
+##### Alternativas a Comandos Comunes
 
 El comando `docker container` puede ser considerado una alternativa a ciertos comandos de Docker. A continuación se presentan algunas equivalencias:
 
@@ -852,11 +879,11 @@ El comando `docker container` puede ser considerado una alternativa a ciertos co
 
 Estas alternativas pueden simplificar la administración de contenedores al utilizar un conjunto coherente de comandos bajo `docker container`.
 
-## Docker --help
+#### Docker --help
 
 En caso de necesitar ayuda para saber qué hace un comando, se agrega el **--help**. Esto proporciona una descripción detallada del comando, sus opciones y uso.
 
-### Ejemplo de Uso del Comando `docker container ls --help`
+##### Ejemplo de Uso del Comando `docker container ls --help`
 
 ```bash
 [XXXX@XXX ~]# docker container ls --help
@@ -879,7 +906,7 @@ Options:
   -s, --size            Display total file sizes
 ```
 
-### Ejemplo de Uso del Comando `docker image ls --help`
+##### Ejemplo de Uso del Comando `docker image ls --help`
 
 ```bash
 [XXXX@XXX ~]# docker image ls --help
@@ -900,7 +927,7 @@ Options:
   -q, --quiet           Only show numeric IDs
 ```
 
-### Ejemplo de Uso del Comando `docker run --help`
+##### Ejemplo de Uso del Comando `docker run --help`
 
 ```bash
 [XXXX@XXX ~]# docker run --help
@@ -922,46 +949,49 @@ Options:
 
 El comando `--help` es esencial para familiarizarse con las diversas opciones y parámetros disponibles para cualquier comando de Docker, permitiendo así un uso más eficiente y efectivo de las capacidades de Docker.
 
-## Docker Info
+#### Docker Info
 
 El comando `docker info` entrega múltiples datos sobre el estado y configuración del entorno Docker.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 **Docker info:** Entrega múltiples datos (Espacio, características, etc.), entre los cuales se destacan la cantidad de contenedores e imágenes y el estado de estos.
+
 ```bash
 docker info
 ```
 
-## Docker Version
+#### Docker Version
 
 El comando `docker --version` sirve para conocer la versión de Docker instalada en la máquina.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 **Docker --version:** Sirve para saber qué versión de Docker se tiene instalada actualmente en la máquina.
+
 ```bash
 docker --version
 ```
 
-## Docker Run
+#### Docker Run
 
 El comando `docker run` sirve para crear y ejecutar nuevos contenedores.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 **Docker run:** Cada vez que se ejecuta este comando, crea un nuevo contenedor, no recicla contenedores ejecutados previamente.
+
 ```bash
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
-# Comandos Docker Image
+### Comandos Docker Image
 
-## Buscar Imagen Docker por CMD
+#### Buscar Imagen Docker por CMD
 
 Con este comando se buscará y entregará una lista de imágenes que se encuentran en el Docker Hub.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 ```bash
 docker search NombreBuscar
@@ -969,70 +999,75 @@ docker search NombreBuscar
 
 > Retorna como máximo 25 resultados.
 
-### Opciones del Comando `docker search`
+##### Opciones del Comando `docker search`
 
 | Opción | Descripción |
 |:------:|:------------|
 | --limit | Limitar el número de resultados (predeterminado: 25) |
 | --filter | Filtrar resultados en base a criterios específicos (stars, is-official, is-automated) |
 
-### Ejemplos de Uso de Opciones
+##### Ejemplos de Uso de Opciones
 
 **Limitar el número de resultados a 10:**
+
 ```bash
 docker search --limit 10 NombreBuscar
 ```
 
 **Filtrar resultados por imágenes oficiales:**
+
 ```bash
 docker search --filter "is-official=true" NombreBuscar
 ```
 
 **Filtrar resultados por número de estrellas (ej. mínimo 3 estrellas):**
+
 ```bash
 docker search --filter "stars=3" NombreBuscar
 ```
 
-## Descargar Imagen
+#### Descargar Imagen
 
 Para descargar una imagen del Docker Hub al entorno local, se utiliza el siguiente comando.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 ```bash
 docker pull NombreImagen
 ```
 
-### Opciones del Comando `docker pull`
+##### Opciones del Comando `docker pull`
 
 | Opción | Descripción |
 |:------:|:------------|
 | --all-tags | Descargar todas las versiones (tags) de la imagen |
 | --platform | Especificar la plataforma para la que se debe descargar la imagen (ej. linux/amd64, linux/arm64) |
 
-### Ejemplos de Uso de Opciones
+##### Ejemplos de Uso de Opciones
 
 **Descargar todas las versiones (tags) de una imagen:**
+
 ```bash
 docker pull --all-tags NombreImagen
 ```
 
 **Especificar la plataforma al descargar una imagen:**
+
 ```bash
 docker pull --platform linux/amd64 NombreImagen
 ```
 
-## Ver Imágenes en Repositorio Local
+#### Ver Imágenes en Repositorio Local
 
 Para ver las imágenes descargadas y almacenadas en el entorno local, se utiliza el siguiente comando.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 ```bash
 docker images
 ```
 
-### Opciones del Comando `docker images`
+##### Opciones del Comando `docker images`
 
 | Opción    | Descripción |
 |:---------:|:------------|
@@ -1043,78 +1078,86 @@ docker images
 | --no-trunc | No truncar la salida de la imagen |
 | -q, --quiet | Mostrar solo los IDs numéricos de las imágenes |
 
-### Ejemplos de Uso de Opciones
+##### Ejemplos de Uso de Opciones
 
 **Mostrar todas las imágenes, incluyendo las intermedias:**
+
 ```bash
 docker images --all
 ```
 
 **Filtrar las imágenes por una condición específica (ej. mostrar solo imágenes de un repositorio específico):**
+
 ```bash
 docker images --filter "reference=NombreImagen:*"
 ```
 
 **Formatear la salida para mostrar solo el nombre y la etiqueta de la imagen:**
+
 ```bash
 docker images --format "{{.Repository}}:{{.Tag}}"
 ```
 
 **Mostrar solo los IDs numéricos de las imágenes:**
+
 ```bash
 docker images --quiet
 ```
 
-## Filtrar Imágenes
+#### Filtrar Imágenes
 
 Para aplicar filtros a la lista de imágenes en el repositorio local, se utiliza el siguiente comando. Este comando funciona de manera similar a cómo se filtran los contenedores.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 ```bash
 docker images -f "filter=valor"
 ```
 
-### Descripción del Comando
+##### Descripción del Comando
 
 El comando `docker images -f` permite aplicar filtros para mostrar solo las imágenes que coinciden con los criterios especificados. Los filtros se pueden basar en atributos como el nombre de la imagen, la etiqueta, la fecha de creación, etc.
 
-### Opciones del Comando `docker images -f`
+##### Opciones del Comando `docker images -f`
 
 | Opción | Descripción |
 |:------:|:------------|
 | -f, --filter | Aplicar un filtro para mostrar solo las imágenes que coinciden con el criterio especificado |
 
-### Ejemplos de Uso
+##### Ejemplos de Uso
 
 **Filtrar imágenes por nombre:**
+
 ```bash
 docker images -f "reference=nombre_imagen"
 ```
 
 **Filtrar imágenes basadas en la etiqueta:**
+
 ```bash
 docker images -f "label=etiqueta=valor"
 ```
 
 **Filtrar imágenes por fecha de creación:**
+
 ```bash
 docker images -f "before=fecha"
 ```
 
 **Filtrar imágenes con una etiqueta específica:**
+
 ```bash
 docker images -f "dangling=true"
 ```
 
-### Notas
+##### Notas
 
 - Asegúrate de reemplazar `"filter=valor"` con el filtro y valor adecuados según tus necesidades.
 - Puedes combinar varios filtros para refinar aún más los resultados.
 
 El comando `docker images -f` es útil para encontrar imágenes específicas en un repositorio local cuando se manejan muchas imágenes o cuando se requiere una búsqueda más precisa.
 
-## Eliminar una Imagen
+#### Eliminar una Imagen
 
 Para eliminar una imagen que se encuentra en el repositorio local, se utiliza el siguiente comando:
 
@@ -1122,34 +1165,37 @@ Para eliminar una imagen que se encuentra en el repositorio local, se utiliza el
 docker rmi ID/Nombre_Imagen
 ```
 
-### Descripción del Comando
+##### Descripción del Comando
 
 El comando `docker rmi` se usa para eliminar una o más imágenes del repositorio local de Docker. La eliminación se realiza utilizando el ID o el nombre de la imagen.
 
-### Opciones del Comando `docker rmi`
+##### Opciones del Comando `docker rmi`
 
 | Opción  | Descripción |
 |:-------:|:------------|
 | `ID/Nombre_Imagen` | El ID o nombre de la imagen que deseas eliminar. Puedes usar el ID de la imagen, el nombre de la imagen, o una combinación de ambos. |
 
-### Ejemplos de Uso
+##### Ejemplos de Uso
 
 **Eliminar una imagen por ID:**
+
 ```bash
 docker rmi abc1234defgh
 ```
 
 **Eliminar una imagen por nombre:**
+
 ```bash
 docker rmi my_image:latest
 ```
 
 **Eliminar varias imágenes al mismo tiempo:**
+
 ```bash
 docker rmi image1 image2 image3
 ```
 
-### Importante
+##### Importante
 
 - **Restricción con Contenedores:** No es posible eliminar una imagen si existe un contenedor que la está utilizando. Si un contenedor se ha creado a partir de una imagen, Docker no permitirá eliminar esa imagen hasta que el contenedor asociado sea eliminado primero.
   
@@ -1159,14 +1205,15 @@ docker rmi image1 image2 image3
   docker rm ID/Nombre_Contenedor
   ```
 
-- **Eliminar Imagen Forzadamente:** Si deseas eliminar una imagen que está en uso, puedes forzar la eliminación utilizando la bandera -f. Esto también eliminará los contenedores que están utilizando la imagen. 
+- **Eliminar Imagen Forzadamente:** Si deseas eliminar una imagen que está en uso, puedes forzar la eliminación utilizando la bandera -f. Esto también eliminará los contenedores que están utilizando la imagen.
 
   **Comando para eliminar una imagen forzadamente:**
+
   ```bash
   docker rmi -f ID/Nombre_Imagen
   ```
 
-### Notas
+##### Notas
 
 - **Comprobación de Imágenes en Uso:** Puedes verificar qué contenedores están utilizando una imagen específica utilizando el comando `docker ps -a` para listar todos los contenedores, y luego buscar los que usan la imagen que deseas eliminar.
   
@@ -1174,7 +1221,7 @@ docker rmi image1 image2 image3
 
 El comando `docker rmi` es útil para limpiar imágenes no utilizadas o para liberar espacio en el disco al eliminar imágenes obsoletas.
 
-## Borrar Todas las Imágenes
+#### Borrar Todas las Imágenes
 
 Para eliminar todas las imágenes almacenadas en el repositorio local, se utiliza el siguiente comando:
 
@@ -1182,38 +1229,41 @@ Para eliminar todas las imágenes almacenadas en el repositorio local, se utiliz
 docker rmi $(docker images -q)
 ```
 
-### Descripción del Comando
+##### Descripción del Comando
 
 El comando `docker rmi $(docker images -q)` elimina todas las imágenes locales en el repositorio de Docker. Se compone de dos partes:
 
 1. `docker images -q`: Este comando lista todos los IDs de las imágenes en el repositorio local.
 2. `docker rmi $(...)`: El comando `docker rmi` elimina las imágenes cuyos IDs son proporcionados como argumento. Al usar `$(docker images -q)`, se pasan todos los IDs de imágenes listadas por el comando anterior.
 
-### Detalles del Comando
+##### Detalles del Comando
 
 - **`docker images -q`:** Lista los IDs de todas las imágenes en el repositorio local sin información adicional. La opción `-q` (quiet) produce una salida limpia con solo los IDs de las imágenes.
 
 - **`docker rmi`:** Elimina las imágenes especificadas. Cuando se le pasa una lista de IDs de imágenes, elimina todas las imágenes correspondientes.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 **Eliminar todas las imágenes en el repositorio local:**
+
 ```bash
 docker rmi $(docker images -q)
 ```
 
-### Importante
+##### Importante
 
 - **Contenedores en Uso:** Antes de ejecutar este comando, asegúrate de que no haya contenedores en ejecución que estén utilizando las imágenes que deseas eliminar. Si existen contenedores utilizando estas imágenes, Docker no permitirá su eliminación.
 
   Para detener y eliminar todos los contenedores que pueden estar utilizando las imágenes, usa los siguientes comandos:
 
   **Detener todos los contenedores:**
+
   ```bash
   docker stop $(docker ps -q)
   ```
 
   **Eliminar todos los contenedores:**
+
   ```bash
   docker rm $(docker ps -a -q)
   ```
@@ -1221,13 +1271,14 @@ docker rmi $(docker images -q)
 - **Forzar Eliminación:** Si deseas eliminar imágenes que están asociadas a contenedores, puedes forzar la eliminación utilizando la bandera -f con el comando `docker rmi`.
 
   **Eliminar todas las imágenes forzadamente:**
+
   ```bash
   docker rmi -f $(docker images -q)
   ```
 
   Nota: Forzar la eliminación eliminará también los contenedores que están en uso y asociados a esas imágenes.
 
-### Precauciones
+##### Precauciones
 
 - **Espacio en Disco:** Asegúrate de que realmente deseas eliminar todas las imágenes, ya que esto puede afectar los contenedores que dependen de esas imágenes y puede liberar espacio en disco, pero también eliminará imágenes que podrían ser necesarias para otros proyectos.
 
@@ -1235,7 +1286,7 @@ docker rmi $(docker images -q)
 
 Este comando es útil para limpiar un entorno Docker de todas las imágenes no deseadas, especialmente en entornos de desarrollo o prueba donde se crean y eliminan muchas imágenes regularmente.
 
-## Historial de Cambios de una Imagen
+#### Historial de Cambios de una Imagen
 
 Para ver el historial de los cambios que ha sufrido una imagen a lo largo de su proceso de construcción, se utiliza el siguiente comando:
 
@@ -1243,24 +1294,25 @@ Para ver el historial de los cambios que ha sufrido una imagen a lo largo de su 
 docker image history Nombre_Imagen
 ```
 
-### Descripción del Comando
+##### Descripción del Comando
 
 El comando `docker image history Nombre_Imagen` muestra una lista detallada de las capas y los cambios aplicados a una imagen desde su construcción inicial hasta su estado actual. Esto incluye información sobre cada capa de la imagen, como la fecha de creación, el tamaño y las instrucciones de construcción.
 
-### Detalles del Comando
+##### Detalles del Comando
 
 - **`docker image history`:** Este comando muestra el historial de una imagen específica. Está diseñado para proporcionar una visión detallada de cómo se construyó la imagen, lo que incluye cada instrucción ejecutada durante el proceso de construcción.
 
 - **`Nombre_Imagen`:** Especifica el nombre de la imagen cuyo historial deseas consultar. Puede ser un nombre de imagen completo, incluyendo la etiqueta (por ejemplo, `ubuntu:latest`), o solo el nombre de la imagen si hay una única etiqueta asociada.
 
-### Ejemplo de Uso
+##### Ejemplo de Uso
 
 **Ver el historial de cambios para una imagen específica:**
+
 ```bash
 docker image history Nombre_Imagen
 ```
 
-### Salida del Comando
+##### Salida del Comando
 
 La salida del comando `docker image history` incluye las siguientes columnas:
 
@@ -1270,7 +1322,7 @@ La salida del comando `docker image history` incluye las siguientes columnas:
 - **`SIZE`:** Tamaño de la capa.
 - **`COMMENT`:** Comentarios opcionales sobre la capa (si se han agregado).
 
-### Ejemplo de Salida
+##### Ejemplo de Salida
 
 ```plaintext
 IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
@@ -1281,22 +1333,22 @@ IMAGE               CREATED             CREATED BY                              
 <sha256:id>         1 month ago         /bin/sh -c FROM ubuntu:20.04                       200MB
 ```
 
-### Uso Típico
+##### Uso Típico
 
 - **Depuración:** Puedes usar el historial de la imagen para depurar problemas en la construcción de la imagen o para entender cómo se configuró una imagen específica.
 - **Optimización:** Analizar el historial puede ayudarte a optimizar el Dockerfile eliminando pasos innecesarios o combinando comandos para reducir el tamaño de la imagen.
 - **Auditoría:** Es útil para auditar las capas y los cambios realizados en la imagen a lo largo del tiempo, asegurando que se cumplan las políticas de seguridad y mantenimiento.
 
-### Nota
+##### Nota
 
 - **Imágenes Intermedias:** El historial mostrará tanto las imágenes intermedias como las finales. Las imágenes intermedias son capas que se crean durante el proceso de construcción y no se usan directamente en el contenedor en ejecución.
 - **Cambios Dinámicos:** Los cambios mostrados reflejan las instrucciones del Dockerfile y cualquier modificación realizada durante el proceso de construcción, lo que incluye la adición de archivos, instalaciones de paquetes y configuraciones.
 
 Este comando es una herramienta poderosa para obtener información detallada sobre la evolución de una imagen Docker a lo largo del tiempo y puede ser muy útil para desarrolladores y administradores de sistemas que trabajan con Docker.
 
-# Comandos Contenedores
+## Comandos Contenedores
 
-## Crear un Contenedor
+### Crear un Contenedor
 
 Para crear un contenedor a partir de una imagen, se utiliza el siguiente comando:
 
@@ -1304,11 +1356,11 @@ Para crear un contenedor a partir de una imagen, se utiliza el siguiente comando
 docker run nombre-Contenedor
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 El comando `docker run` se emplea para crear y ejecutar un nuevo contenedor desde una imagen especificada. Cada vez que se ejecuta este comando, se genera un nuevo contenedor, incluso si ya existe un contenedor basado en la misma imagen. El comando también descarga la imagen desde Docker Hub si no está disponible localmente.
 
-### Ejemplo de Uso
+#### Ejemplo de Uso
 
 **Crear un contenedor a partir de una imagen específica:**
 
@@ -1317,13 +1369,14 @@ docker run hello-world
 ```
 
 **Descripción:**
+
 - **`hello-world`**: Es una imagen de prueba que confirma que Docker está funcionando correctamente. Si la imagen no está disponible localmente, Docker la descargará desde Docker Hub.
 
 **Docker Hub** es un registro en línea de imágenes Docker. Si la imagen solicitada no está en el repositorio local, Docker la descargará desde Docker Hub para crear el contenedor.
 
 ---
 
-### Crear un Contenedor con Nombre
+#### Crear un Contenedor con Nombre
 
 Para asignar un nombre específico a un contenedor al momento de su creación, se utiliza la opción `--name`:
 
@@ -1332,6 +1385,7 @@ docker run -it --name ubuntu_personal ubuntu bash
 ```
 
 **Descripción:**
+
 - **`-it`**: Combina las opciones `-i` (interactivo) y -t (terminal), permitiendo la interacción con el contenedor.
 - **`--name ubuntu_personal`**: Asigna el nombre `ubuntu_personal` al contenedor.
 - **`ubuntu`**: Es la imagen desde la cual se creará el contenedor.
@@ -1342,7 +1396,7 @@ Este comando inicia un contenedor basado en la imagen `ubuntu`, lo nombra `ubunt
 
 ---
 
-### Crear un Contenedor Interactivo
+#### Crear un Contenedor Interactivo
 
 Para crear un contenedor que permita la interacción con el usuario a través de una terminal, se utiliza el comando con las opciones -it:
 
@@ -1351,6 +1405,7 @@ docker run -it ubuntu
 ```
 
 **Descripción:**
+
 - **`-it`**: Combina `-i` (interactivo) y -t (terminal) para permitir la interacción con la terminal del contenedor.
 - **`ubuntu`**: Es la imagen base. La imagen de Ubuntu proporciona un entorno de línea de comandos interactivo.
 
@@ -1362,7 +1417,7 @@ La imagen `ubuntu` proporciona una versión mínima de Ubuntu para la interacci�
 
 ---
 
-### Crear un Contenedor en Segundo Plano (Background)
+#### Crear un Contenedor en Segundo Plano (Background)
 
 Para ejecutar un contenedor en segundo plano, sin mantener la ventana de comandos abierta, se utiliza la opción -d:
 
@@ -1371,6 +1426,7 @@ docker run -d nginx
 ```
 
 **Descripción:**
+
 - **-d**: Ejecuta el contenedor en modo "detached" (en segundo plano).
 - **`nginx`**: Es la imagen desde la cual se creará el contenedor.
 
@@ -1382,7 +1438,7 @@ Un contenedor en modo detached no se puede eliminar automáticamente cuando se d
 
 ---
 
-### Crear un Contenedor con Eliminación Automática
+#### Crear un Contenedor con Eliminación Automática
 
 Para eliminar automáticamente un contenedor una vez que haya terminado su ejecución, se utiliza la opción `--rm`:
 
@@ -1391,6 +1447,7 @@ docker run -it --rm --name Nombre_Contenedor Nombre_imagen
 ```
 
 **Descripción:**
+
 - **`-it`**: Permite la interacción con la terminal del contenedor.
 - **`--rm`**: Elimina el contenedor automáticamente después de que se detiene.
 - **`--name Nombre_Contenedor`**: Asigna el nombre `Nombre_Contenedor` al contenedor.
@@ -1406,8 +1463,7 @@ El contenedor se eliminará tan pronto como se cierre la sesión interactiva.
 
 Estos comandos te permiten crear y gestionar contenedores Docker de manera flexible, ajustando su comportamiento según tus necesidades, ya sea para pruebas, desarrollo o producción.
 
-
-## Ingresar a un Contenedor en Modo Interactivo
+### Ingresar a un Contenedor en Modo Interactivo
 
 Para ingresar a un contenedor que ya ha sido creado previamente y que está en estado detenido, utilizando el modo interactivo, puedes usar el siguiente comando:
 
@@ -1415,13 +1471,13 @@ Para ingresar a un contenedor que ya ha sido creado previamente y que está en e
 docker start -i ID_Contenedor
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker start`**: Inicia un contenedor que está detenido.
 - **`-i`**: Proporciona una sesión interactiva con el contenedor.
 - **`ID_Contenedor`**: Es el ID del contenedor que deseas iniciar y al que quieres acceder.
 
-### Uso
+#### Uso
 
 Este comando inicia un contenedor previamente creado y detenido y proporciona una terminal interactiva para interactuar con él. Si deseas trabajar con un contenedor que ha sido previamente configurado y está detenido, este comando evita la creación de un nuevo contenedor y te permite retomar la sesión del contenedor existente.
 
@@ -1430,7 +1486,7 @@ Cuando un contenedor se detiene, no se elimina automáticamente; debes iniciarlo
 
 ---
 
-## Salir de un Contenedor sin Detener la Ejecución
+### Salir de un Contenedor sin Detener la Ejecución
 
 Para salir de un contenedor sin detener su ejecución, puedes usar la siguiente combinación de teclas:
 
@@ -1438,7 +1494,7 @@ Para salir de un contenedor sin detener su ejecución, puedes usar la siguiente 
 Ctrl+P+Q
 ```
 
-### Descripción
+#### Descripción
 
 - **`Ctrl+P`** y **`Ctrl+Q`**: Esta combinación de teclas permite desvincular la terminal del contenedor, dejando el contenedor en ejecución en segundo plano. Esto es útil si necesitas cerrar tu sesión interactiva sin detener el contenedor.
 
@@ -1447,7 +1503,7 @@ Presiona `Ctrl+P` seguido de `Ctrl+Q` para regresar a tu terminal local mientras
 
 ---
 
-## Detener un Contenedor
+### Detener un Contenedor
 
 Para detener un contenedor que se encuentra en ejecución, utiliza el siguiente comando:
 
@@ -1455,18 +1511,18 @@ Para detener un contenedor que se encuentra en ejecución, utiliza el siguiente 
 docker stop ID_Contenedor
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker stop`**: Detiene la ejecución de un contenedor.
 - **`ID_Contenedor`**: Es el ID del contenedor que deseas detener.
 
-### Uso
+#### Uso
 
 Este comando envía una señal de parada al contenedor especificado, permitiéndole cerrar de manera controlada. Es útil cuando necesitas finalizar el contenedor de manera ordenada.
 
 ---
 
-## Detener Todos los Contenedores
+### Detener Todos los Contenedores
 
 Para detener todos los contenedores que están actualmente en ejecución, usa el siguiente comando:
 
@@ -1474,19 +1530,19 @@ Para detener todos los contenedores que están actualmente en ejecución, usa el
 docker stop $(docker ps -q)
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker stop`**: Detiene los contenedores especificados.
 - **`$(docker ps -q)`**: Obtiene los IDs de todos los contenedores en ejecución.
 
-### Uso
+#### Uso
 
 Este comando primero obtiene una lista de todos los contenedores en ejecución (`docker ps -q` devuelve solo los IDs de los contenedores) y luego pasa esa lista al comando `docker stop`, deteniendo todos los contenedores.
 
 **Nota:**
 Este comando detiene todos los contenedores activos en tu sistema. Si quieres detener todos los contenedores, incluidos los que están detenidos, usa `docker ps -a -q` en lugar de `docker ps -q`.
 
-## Ver Contenedores en Ejecución
+### Ver Contenedores en Ejecución
 
 Para ver los contenedores que están actualmente en ejecución, puedes usar una de las siguientes opciones:
 
@@ -1498,12 +1554,12 @@ docker container ls
 docker ps
 ```
 
-### Descripción de los Comandos
+#### Descripción de los Comandos
 
 - **`docker container ls`**: Muestra una lista de todos los contenedores que están en ejecución.
 - **`docker ps`**: Es un alias de `docker container ls` y realiza la misma función.
 
-### Uso
+#### Uso
 
 Estos comandos te proporcionan una lista de contenedores que están activos en tu sistema. La salida incluye detalles como el ID del contenedor, la imagen utilizada, el comando que se está ejecutando, el estado, y más.
 
@@ -1512,7 +1568,7 @@ Ambos comandos son equivalentes y puedes usar cualquiera de ellos según tu pref
 
 ---
 
-## Ver Contenedores Detenidos
+### Ver Contenedores Detenidos
 
 Para ver los contenedores que están creados pero detenidos, usa el siguiente comando:
 
@@ -1520,11 +1576,11 @@ Para ver los contenedores que están creados pero detenidos, usa el siguiente co
 docker ps -a
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker ps -a`**: Muestra todos los contenedores, incluyendo los que están detenidos y los que están en ejecución.
 
-### Uso
+#### Uso
 
 Este comando proporciona una lista completa de todos los contenedores, independientemente de su estado. Los contenedores detenidos se muestran junto con los que están actualmente en ejecución.
 
@@ -1533,7 +1589,7 @@ Los contenedores no se eliminan automáticamente al detenerse; permanecen en est
 
 ---
 
-## Ver Último Contenedor Arrancado
+### Ver Último Contenedor Arrancado
 
 Para visualizar el último contenedor que ha realizado una operación, usa:
 
@@ -1541,17 +1597,17 @@ Para visualizar el último contenedor que ha realizado una operación, usa:
 docker ps -l
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker ps -l`**: Muestra el último contenedor que ha realizado alguna operación (ya sea que esté en ejecución o detenido).
 
-### Uso
+#### Uso
 
 Este comando es útil para identificar rápidamente el contenedor más reciente que ha sido creado o ejecutado. Proporciona información sobre el último contenedor en tu sistema.
 
 ---
 
-## Ver Últimos Contenedores que se Han Ejecutado (Cantidad)
+### Ver Últimos Contenedores que se Han Ejecutado (Cantidad)
 
 Para ver los últimos contenedores que han realizado alguna operación y especificar la cantidad de contenedores a mostrar, utiliza:
 
@@ -1559,11 +1615,11 @@ Para ver los últimos contenedores que han realizado alguna operación y especif
 docker ps -n 4
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker ps -n 4`**: Muestra los últimos 4 contenedores que han realizado alguna operación. Puedes ajustar el número (4) según la cantidad deseada.
 
-### Uso
+#### Uso
 
 Este comando limita la salida a los contenedores más recientes, lo que facilita la visualización de los contenedores más relevantes que han sido creados o ejecutados recientemente.
 
@@ -1572,7 +1628,7 @@ Puedes cambiar el número (4) por cualquier otro valor para mostrar una cantidad
 
 ---
 
-## Ver IDs de Contenedores
+### Ver IDs de Contenedores
 
 Para visualizar solamente los IDs de los contenedores, puedes usar una de las siguientes opciones:
 
@@ -1584,18 +1640,18 @@ docker ps -a -q
 docker ps -aq
 ```
 
-### Descripción de los Comandos
+#### Descripción de los Comandos
 
 - **`docker ps -a -q`**: Muestra solamente los IDs de todos los contenedores, independientemente de su estado (en ejecución o detenido).
 - **`docker ps -aq`**: Es un alias de `docker ps -a -q` y realiza la misma función.
 
-### Uso
+#### Uso
 
 Estos comandos proporcionan una lista de IDs de contenedores que puedes usar en scripts o comandos para realizar operaciones automáticas sobre los contenedores.
 
 ---
 
-## Ver Tamaño del Contenedor
+### Ver Tamaño del Contenedor
 
 Para ver el tamaño que ocupa un contenedor en el sistema, usa el siguiente comando. En el ejemplo se muestra cómo ver el tamaño de los últimos 3 contenedores:
 
@@ -1603,22 +1659,22 @@ Para ver el tamaño que ocupa un contenedor en el sistema, usa el siguiente coma
 docker ps -a -n 3 -s
 ```
 
-### Descripción del Comando
+#### Descripción del Comando
 
 - **`docker ps -a -n 3 -s`**: Muestra todos los contenedores, incluyendo los que están detenidos, los últimos 3 contenedores en ejecución y sus tamaños.
 
-### Uso
+#### Uso
 
 Este comando proporciona información sobre el tamaño de los contenedores, lo que puede ser útil para gestionar el espacio en disco y verificar el impacto de los contenedores en tu sistema.
 
 **Nota:**
 El tamaño mostrado es el tamaño de la capa de imagen y los cambios realizados en el contenedor. La opción -s muestra detalles del tamaño de cada contenedor.
 
-## Filtrar Lista de Contenedores (`--filter`, -f)
+### Filtrar Lista de Contenedores (`--filter`, -f)
 
 El comando para filtrar la lista de contenedores permite agregar una o más opciones de filtrado para personalizar la búsqueda de contenedores. Esto se hace mediante el parámetro `--filter` o su forma corta -f. A continuación, se detallan las opciones disponibles para aplicar filtros:
 
-### Opciones de Filtros
+#### Opciones de Filtros
 
 | Filtro         | Descripción                                                                                                    |
 |----------------|----------------------------------------------------------------------------------------------------------------|
@@ -1638,9 +1694,9 @@ El comando para filtrar la lista de contenedores permite agregar una o más opci
 
 Para obtener una descripción más detallada de cada filtro, revisa el [enlace a filtros de Docker](https://docs.docker.com/engine/reference/commandline/ps/#filtering).
 
-### Ejemplos de Uso
+#### Ejemplos de Uso
 
-#### Filtrar por Nombre
+##### Filtrar por Nombre
 
 Para filtrar la lista de contenedores por nombre, usa el siguiente comando:
 
@@ -1650,7 +1706,7 @@ docker ps -a -f "name=XX"
 
 **Descripción:**
 
-- **`docker ps -a -f "name=XX"`**: Muestra todos los contenedores (incluidos los detenidos) que tienen un nombre que coincide con `XX`. 
+- **`docker ps -a -f "name=XX"`**: Muestra todos los contenedores (incluidos los detenidos) que tienen un nombre que coincide con `XX`.
 
 **Nota:**
 
@@ -1664,11 +1720,11 @@ Si deseas buscar contenedores cuyo nombre contenga "web", podrías usar:
 docker ps -a -f "name=web"
 ```
 
-## Eliminar un Contenedor
+### Eliminar un Contenedor
 
 Para eliminar un contenedor que se encuentra detenido, se pueden usar los siguientes comandos:
 
-### Opción 1: Eliminar por ID
+#### Opción 1: Eliminar por ID
 
 ```ps
 docker rm ID_Contenedor
@@ -1678,7 +1734,7 @@ docker rm ID_Contenedor
 
 - **`docker rm ID_Contenedor`**: Elimina un contenedor especificado por su ID. Reemplaza `ID_Contenedor` con el ID real del contenedor que deseas eliminar.
 
-### Opción 2: Eliminar por Nombre
+#### Opción 2: Eliminar por Nombre
 
 ```ps
 docker rm Nombre_Contenedor
@@ -1770,13 +1826,14 @@ docker diff my_container
 
 Podrías obtener una salida como esta:
 
-```
+```bash
 A /newfile.txt
 C /existingfile.txt
 D /oldfile.txt
 ```
 
 Esto significa que:
+
 - Se ha añadido el archivo `/newfile.txt`.
 - Se ha modificado el archivo `/existingfile.txt`.
 - Se ha eliminado el archivo `/oldfile.txt`.
@@ -1785,7 +1842,7 @@ Esto significa que:
 
 Estos comandos son útiles para auditar los cambios realizados en un contenedor, especialmente cuando se desean verificar las modificaciones realizadas durante el tiempo de ejecución del contenedor.
 
-# Puertos Docker
+## Puertos Docker
 
 Los contenedores Docker deben ser accesibles desde el exterior para poder interactuar con ellos, como en el caso de una API o un servidor web. Por defecto, los puertos de los contenedores son privados y no accesibles desde fuera del contenedor. Es necesario mapear estos puertos con puertos del host que aloja el contenedor para hacerlos accesibles.
 
@@ -1816,7 +1873,7 @@ Esto mostrará una columna llamada **PORTS**, que indica cómo están mapeados l
 
 **Ejemplo de columna PORTS:**
 
-```
+```bash
 0.0.0.0:24312->80/tcp
 ```
 
@@ -1862,7 +1919,7 @@ docker run -d --name Nombre_personalizado -p 8080:80 Nombre_Imagen
 
 Estos comandos te permitirán gestionar la accesibilidad de los contenedores Docker a través de puertos, ya sea exponiéndolos automáticamente o asignando puertos específicos del host.
 
-# Redes Docker
+## Redes Docker
 
 Docker utiliza redes para permitir la comunicación entre contenedores y entre contenedores y el host. Por defecto, Docker crea y maneja varias redes, pero también puedes crear redes personalizadas para cumplir con requisitos específicos.
 
@@ -1994,6 +2051,7 @@ docker run -it --rm --name Nombre_contenedor --link Nombre_contenedor_destino:al
 ```
 
 > **Notas:**
+>
 > - `--rm` elimina el contenedor automáticamente al finalizar.
 > - `--name` debe ser usado para los contenedores que deseas enlazar.
 > - El enlace no es necesario si los contenedores están en la misma red personalizada.
@@ -2023,17 +2081,17 @@ Para eliminar una red ya creada:
 docker network rm Nombre_Red
 ```
 
-> No es posible borrar una red que tiene contenedores asociados. 
+> No es posible borrar una red que tiene contenedores asociados.
 
 ---
 
 Estos comandos y procedimientos te permitirán gestionar redes Docker para facilitar la comunicación entre contenedores y con el host.
 
-# Volúmenes en Docker
+## Volúmenes en Docker
 
 Los volúmenes en Docker son fundamentales para gestionar la persistencia de datos y facilitar el intercambio de información entre contenedores y el host. A continuación, se detallan las operaciones y conceptos clave relacionados con los volúmenes en Docker:
 
-## ¿Por qué usar Volúmenes?
+### ¿Por qué usar Volúmenes?
 
 - **Persistencia de Datos:** Los volúmenes permiten que los datos persistan más allá de la vida útil de un contenedor.
 - **Facilidad de Respaldo y Migración:** Facilitan el respaldo y la migración de datos.
@@ -2042,7 +2100,7 @@ Los volúmenes en Docker son fundamentales para gestionar la persistencia de dat
 - **Creación Inicial desde un Contenedor:** La información puede ser añadida a un volumen mediante un contenedor antes de que un usuario acceda a él.
 - **Administración con Docker:** Los volúmenes se administran directamente con Docker y pueden ser gestionados de forma remota.
 
-## Crear un Volumen
+### Crear un Volumen
 
 Puedes crear un volumen al momento de ejecutar un contenedor:
 
@@ -2052,7 +2110,7 @@ docker run -it -v Carpeta_Volumen --name Nombre_Contenedor Nombre_Imagen bash
 
 > **Nota:** `Carpeta_Volumen` es la ubicación dentro del contenedor donde se almacenarán los datos. El volumen se crea en la ubicación predeterminada de Docker, pero puede ser personalizado si es necesario.
 
-## Listar Volúmenes
+### Listar Volúmenes
 
 Para ver todos los volúmenes disponibles:
 
@@ -2062,7 +2120,7 @@ docker volume ls
 
 > El comando muestra el driver y el nombre del volumen. Si no se especifica un nombre, Docker generará un nombre aleatorio.
 
-## Obtener Información de un Volumen
+### Obtener Información de un Volumen
 
 Para obtener detalles sobre un volumen específico:
 
@@ -2072,7 +2130,7 @@ docker volume inspect ID/Nombre_Volumen
 
 > Se proporciona información como la fecha de creación, el tipo de driver, el punto de montaje (la ubicación en el host donde se almacenan los datos), el nombre, entre otros detalles.
 
-## Crear un Directorio Compartido (Carpeta)
+### Crear un Directorio Compartido (Carpeta)
 
 Para compartir archivos o carpetas entre el host y los contenedores, puedes especificar la ruta al crear el contenedor:
 
@@ -2085,7 +2143,7 @@ docker run -it -v /root/carpeta1:/carpeta1 Nombre_Imagen
 
 > **Nota:** Esto asocia un directorio del host con un directorio en el contenedor. Se muestra como "HostConfig/Binds" en los datos del contenedor y no se considera un volumen en Docker.
 
-## Compartir un Volumen entre Contenedores
+### Compartir un Volumen entre Contenedores
 
 Para compartir un volumen entre dos contenedores:
 
@@ -2103,9 +2161,9 @@ Para compartir un volumen entre dos contenedores:
 
 > **Nota:** No es posible conectar directamente a un volumen; debe haber un contenedor en ejecución que esté utilizando el volumen para poder compartirlo con otros contenedores.
 
-## Crear Volumen de Forma Independiente
+### Crear Volumen de Forma Independiente
 
-### Nombre Personalizado
+#### Nombre Personalizado
 
 Para crear un volumen con un nombre personalizado:
 
@@ -2119,7 +2177,7 @@ Para usar el volumen al crear un contenedor:
 docker run -it --name Nombre_Contenedor -v Nombre_Volume:Nombre_Directorio Nombre_Imagen bash
 ```
 
-### Permiso de Lectura
+#### Permiso de Lectura
 
 Para hacer que un contenedor solo pueda leer datos sin modificar el directorio, agrega `:ro` al nombre del directorio:
 
@@ -2127,7 +2185,7 @@ Para hacer que un contenedor solo pueda leer datos sin modificar el directorio, 
 docker run -it --name Nombre_Contenedor -v Nombre_Volume:Nombre_Directorio:ro Nombre_Imagen bash
 ```
 
-### Uso en Windows
+#### Uso en Windows
 
 Para especificar un volumen en Windows, usa la ruta completa y cambia el separador de directorios:
 
@@ -2137,7 +2195,7 @@ docker run -it --name Nombre_Contenedor -v C:\\Users\\XXXX\\dir1:volumenDocker N
 
 > **Nota:** En Windows, se debe utilizar la ruta completa y el separador de directorios `\\`. Asegúrate de tener los permisos necesarios y la contraseña del equipo para que Docker pueda acceder al directorio.
 
-## Borrar un Volumen Específico
+### Borrar un Volumen Específico
 
 Para eliminar un volumen específico:
 
@@ -2147,7 +2205,7 @@ docker volume rm ID/Nombre_Volumen
 
 > **Nota:** No se puede eliminar un volumen que esté en uso por un contenedor.
 
-## Borrar Volúmenes Inactivos o No Asociados
+### Borrar Volúmenes Inactivos o No Asociados
 
 Para eliminar volúmenes que ya no están en uso o que quedaron sin ser eliminados:
 
@@ -2161,15 +2219,15 @@ docker volume prune
 
 Este resumen cubre las operaciones básicas y avanzadas relacionadas con volúmenes en Docker, proporcionando una visión completa de su uso y administración.
 
-# Manipulación de Imagen y Contenedor
+## Manipulación de Imagen y Contenedor
 
 La manipulación de imágenes y contenedores en Docker es fundamental para personalizar y optimizar tus entornos de desarrollo y producción. A continuación, se detallan los pasos y opciones disponibles para modificar y crear imágenes a partir de contenedores.
 
-## Modificar una Imagen
+### Modificar una Imagen
 
 Para modificar una imagen en Docker, debes seguir estos pasos:
 
-### 1. Crear un Contenedor Basado en una Imagen
+#### 1. Crear un Contenedor Basado en una Imagen
 
 Primero, crea un contenedor a partir de una imagen base. Por ejemplo, para crear un contenedor basado en la imagen de Ubuntu:
 
@@ -2179,7 +2237,7 @@ docker run -it --name Nombre_Contenedor Nombre_Imagen bash
 
 > **Nota:** Aquí `Nombre_Contenedor` es el nombre que asignarás al contenedor, y `Nombre_Imagen` es la imagen base (por ejemplo, `ubuntu`).
 
-### 2. Realizar Cambios en el Contenedor
+#### 2. Realizar Cambios en el Contenedor
 
 Una vez que el contenedor está en ejecución, puedes instalar software, modificar configuraciones, o realizar cualquier otra tarea necesaria. Por ejemplo, para instalar el servidor web Apache en el contenedor:
 
@@ -2190,7 +2248,7 @@ apt-get install -y apache2
 
 Realiza todas las modificaciones que necesites dentro del contenedor.
 
-### 3. Crear una Imagen a Partir del Contenedor Modificado
+#### 3. Crear una Imagen a Partir del Contenedor Modificado
 
 Después de realizar los cambios, debes guardar estos cambios como una nueva imagen. Puedes hacerlo usando el comando `docker commit`:
 
@@ -2198,16 +2256,17 @@ Después de realizar los cambios, debes guardar estos cambios como una nueva ima
 docker commit ID/Nombre_Contenedor Nombre_Nueva_Imagen:tag
 ```
 
-> **Nota:** 
+> **Nota:**
+>
 > - `ID/Nombre_Contenedor` es el identificador o nombre del contenedor modificado.
 > - `Nombre_Nueva_Imagen` es el nombre que deseas asignar a la nueva imagen.
 > - `tag` es una etiqueta opcional que puedes utilizar para versionar la imagen. Si no se especifica, Docker asignará automáticamente el tag `latest`.
 
-## Crear una Imagen
+### Crear una Imagen
 
 Existen dos maneras principales de crear una imagen en Docker: automática y manual. En este caso, se abordará la creación manual de imágenes.
 
-### Crear una Imagen Manualmente
+#### Crear una Imagen Manualmente
 
 Para crear una imagen manualmente a partir de un contenedor modificado, sigue estos pasos:
 
@@ -2223,7 +2282,7 @@ Para crear una imagen manualmente a partir de un contenedor modificado, sigue es
    - **`Nombre_Nueva_Imagen`**: Nombre que deseas asignar a la nueva imagen.
    - **`tag`**: Etiqueta opcional para la versión de la imagen. Si no se proporciona, Docker usa `latest` por defecto.
 
-### Ejemplo de Creación de Imagen
+#### Ejemplo de Creación de Imagen
 
 Si modificaste un contenedor llamado `mi_contenedor` y deseas guardar estos cambios en una nueva imagen llamada `mi_imagen_personalizada` con una etiqueta `v1.0`, el comando sería:
 
@@ -2233,7 +2292,7 @@ docker commit mi_contenedor mi_imagen_personalizada:v1.0
 
 > **Nota:** La creación manual de imágenes mediante `docker commit` es útil para capturar cambios en un contenedor en ejecución, pero para procesos más repetitivos y automatizados, se recomienda utilizar un `Dockerfile` para definir la imagen desde cero.
 
-## Consejos Adicionales
+### Consejos Adicionales
 
 - **Usar Dockerfile:** Para una mayor reproducibilidad y control, considera crear un `Dockerfile` en lugar de modificar contenedores manualmente. Un `Dockerfile` define todos los pasos necesarios para construir una imagen desde el inicio, asegurando consistencia en el proceso de construcción.
 
@@ -2255,13 +2314,13 @@ docker commit mi_contenedor mi_imagen_personalizada:v1.0
 
 Este ítem proporciona una guía detallada sobre cómo modificar y crear imágenes en Docker, cubriendo tanto el proceso manual como algunas mejores prácticas para un manejo eficiente de imágenes y contenedores.
 
-# Dockerfile
+## Dockerfile
 
-## Introducción
+### Introducción
 
 Un `Dockerfile` es un archivo de configuración utilizado para construir imágenes de Docker de manera automática y reproducible. Este archivo contiene un conjunto de instrucciones que Docker sigue para crear una imagen. Las imágenes son el blueprint para los contenedores, y un `Dockerfile` especifica cómo debe ser construida una imagen a partir de una imagen base, agregando software, configuraciones y archivos necesarios.
 
-## Ejemplo Básico
+### Ejemplo Básico
 
 Aquí tienes un ejemplo básico de un `Dockerfile` que crea una imagen que ejecuta un programa "Hello-World":
 
@@ -2272,13 +2331,14 @@ CMD ["/hello"]
 ```
 
 En este ejemplo:
+
 - `FROM scratch` indica que la imagen base es vacía.
 - `COPY hello /` copia el archivo `hello` desde el contexto de construcción al contenedor.
 - `CMD ["/hello"]` especifica que el contenedor debe ejecutar el comando `/hello` al iniciar.
 
-## Crear una Imagen con Dockerfile
+### Crear una Imagen con Dockerfile
 
-### Estructura Básica del Dockerfile
+#### Estructura Básica del Dockerfile
 
 Un `Dockerfile` típico puede contener las siguientes instrucciones:
 
@@ -2294,7 +2354,7 @@ Un `Dockerfile` típico puede contener las siguientes instrucciones:
 10. **CMD**: Especifica el comando predeterminado a ejecutar cuando el contenedor se inicia.
 11. **ENTRYPOINT**: Similar a `CMD`, pero asegura que el comando especificado se ejecute siempre cuando el contenedor se inicie.
 
-### Ejemplo de Dockerfile
+#### Ejemplo de Dockerfile
 
 ```dockerfile
 # Seleccionar la imagen base
@@ -2327,7 +2387,7 @@ ENTRYPOINT ["python3", "src/app.py"]
 CMD ["--port", "8080"]
 ```
 
-## Comando `RUN`
+### Comando `RUN`
 
 El comando `RUN` se utiliza para ejecutar comandos en una capa de la imagen. Puedes usar `&&` para combinar múltiples comandos en una sola capa:
 
@@ -2343,7 +2403,7 @@ RUN apt-get update && \
     apt-get install -y git
 ```
 
-## Comando `CMD`
+### Comando `CMD`
 
 El comando `CMD` especifica el comando predeterminado a ejecutar cuando el contenedor inicia. Puedes utilizar `CMD` en dos formatos:
 
@@ -2361,7 +2421,7 @@ El comando `CMD` especifica el comando predeterminado a ejecutar cuando el conte
 
 > **Nota:** Solo puede haber un `CMD` por Dockerfile. Si se especifican múltiples `CMD`, solo se ejecutará el último.
 
-## Comando `ENTRYPOINT`
+### Comando `ENTRYPOINT`
 
 El comando `ENTRYPOINT` define el comando que se ejecuta siempre que el contenedor se inicia, independientemente de los comandos pasados al contenedor:
 
@@ -2380,7 +2440,7 @@ CMD ["--port", "8080"]
 
 En este caso, `ENTRYPOINT` define el comando principal, mientras que `CMD` proporciona argumentos opcionales.
 
-## Comando `WORKDIR`
+### Comando `WORKDIR`
 
 `WORKDIR` establece el directorio de trabajo para los comandos `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, y `ADD`. Puedes usar `WORKDIR` varias veces:
 
@@ -2393,9 +2453,9 @@ RUN touch file.txt
 
 El contenedor se iniciará en el último directorio de trabajo especificado.
 
-## Comando `COPY` y `ADD`
+### Comando `COPY` y `ADD`
 
-### `COPY`
+#### `COPY`
 
 `COPY` copia archivos y directorios desde el contexto de construcción al contenedor:
 
@@ -2403,7 +2463,7 @@ El contenedor se iniciará en el último directorio de trabajo especificado.
 COPY index.html /app/
 ```
 
-### `ADD`
+#### `ADD`
 
 `ADD` tiene capacidades adicionales, como descomprimir archivos y copiar desde URLs:
 
@@ -2414,7 +2474,7 @@ ADD https://example.com/file.txt /app/
 
 > **Nota:** Prefiere `COPY` cuando solo necesites copiar archivos locales, ya que `ADD` tiene más funcionalidades que pueden no ser necesarias y podrían introducir complejidades innecesarias.
 
-## Comando `ENV`
+### Comando `ENV`
 
 `ENV` define variables de entorno que estarán disponibles en el contenedor:
 
@@ -2424,7 +2484,7 @@ ENV APP_ENV=production
 
 Estas variables se pueden usar en el contenedor para configurar el entorno de ejecución.
 
-## Comando `ARG`
+### Comando `ARG`
 
 `ARG` permite definir variables que pueden ser pasadas en tiempo de construcción:
 
@@ -2441,7 +2501,7 @@ docker build --build-arg APP_VERSION=1.0 -t my_image .
 
 > **Nota:** `ARG` solo está disponible durante la construcción de la imagen, mientras que `ENV` está disponible en el contenedor en ejecución.
 
-## Comando `EXPOSE`
+### Comando `EXPOSE`
 
 `EXPOSE` indica que el contenedor escuchará en el puerto especificado. Esto es informativo y no publica el puerto por sí mismo:
 
@@ -2455,7 +2515,7 @@ Para publicar el puerto en el host, usa el flag `-p` con `docker run`:
 docker run -p 8080:8080 my_image
 ```
 
-## Comando `VOLUME`
+### Comando `VOLUME`
 
 `VOLUME` crea un punto de montaje para volúmenes. Esto permite persistir datos generados y compartidos entre contenedores:
 
@@ -2473,13 +2533,13 @@ docker run -v /host/data:/data my_image
 
 Este artículo proporciona una visión completa y detallada de los conceptos básicos y comandos de `Dockerfile`, cubriendo desde la creación de una imagen hasta la gestión de volúmenes y variables. Con esta guía, deberías estar bien preparado para crear y personalizar imágenes de Docker de manera efectiva.
 
-# Docker Hub
+## Docker Hub
 
 Docker Hub es un servicio de repositorio en línea para imágenes de Docker. Proporciona un espacio para almacenar, compartir y gestionar imágenes de Docker. Puedes encontrar imágenes oficiales proporcionadas por empresas y organizaciones, así como imágenes creadas y compartidas por otros usuarios de la comunidad.
 
-## Subir una Imagen a Docker Hub
+### Subir una Imagen a Docker Hub
 
-### 1. Iniciar Sesión en Docker Hub
+#### 1. Iniciar Sesión en Docker Hub
 
 Antes de subir una imagen a Docker Hub, necesitas iniciar sesión en tu cuenta. Puedes hacerlo con el siguiente comando:
 
@@ -2493,7 +2553,7 @@ docker login
 - Una vez ingresados los datos correctamente, verás el mensaje `Login Succeeded`, que indica que el inicio de sesión fue exitoso.
 - La sesión permanecerá activa mientras el terminal esté abierto o mientras la conexión sea válida.
 
-### 2. Etiquetar la Imagen
+#### 2. Etiquetar la Imagen
 
 Docker Hub requiere que las imágenes se etiqueten de manera específica antes de subirlas. Esta etiqueta incluye el nombre del usuario de Docker Hub y el nombre del repositorio. Para etiquetar una imagen existente, usa el comando `docker image tag`:
 
@@ -2510,10 +2570,11 @@ docker image tag mi-imagen:v1.0 miusuario/mi-imagen:v1.0
 ```
 
 En este ejemplo:
+
 - `mi-imagen:v1.0` es el nombre y la etiqueta de la imagen local.
 - `miusuario/mi-imagen:v1.0` es el nombre y la etiqueta que se usará en Docker Hub.
 
-### 3. Subir la Imagen a Docker Hub
+#### 3. Subir la Imagen a Docker Hub
 
 Una vez que la imagen esté etiquetada correctamente, puedes subirla a Docker Hub con el siguiente comando:
 
@@ -2530,35 +2591,39 @@ docker push miusuario/mi-imagen:v1.0
 ```
 
 **Notas:**
+
 - Asegúrate de reemplazar `NombreUsuario`, `NombreImagen`, y `TAG` con los valores correspondientes a tu imagen y cuenta de Docker Hub.
 - El proceso de subida puede tardar un poco dependiendo del tamaño de la imagen y la velocidad de tu conexión a Internet.
 
-### Resumen
+#### Resumen
 
 1. **Iniciar sesión en Docker Hub:**
+
    ```bash
    docker login
    ```
 
 2. **Etiquetar la imagen:**
+
    ```bash
    docker image tag Nombre_Imagen:TAG NombreUsuario/NombreImagen:TAG
    ```
 
 3. **Subir la imagen:**
+
    ```bash
    docker push NombreUsuario/NombreImagen:TAG
    ```
 
 Con estos pasos, puedes subir tus imágenes a Docker Hub y compartirlas con otros usuarios o utilizarlas en diferentes entornos. ¡Docker Hub es una herramienta poderosa para gestionar y distribuir imágenes de Docker de manera eficiente!
 
-# Docker Compose
+## Docker Compose
 
 Docker Compose es una herramienta fundamental para la definición y ejecución de aplicaciones que requieren múltiples contenedores Docker. Utilizando un archivo de configuración llamado `docker-compose.yml`, Docker Compose permite orquestar y coordinar los diferentes servicios y contenedores que componen una aplicación, facilitando su gestión y despliegue.
 
 ### ¿Qué es Docker Compose?
 
-Docker Compose simplifica el manejo de aplicaciones complejas al permitir la definición de múltiples servicios en un solo archivo. Este archivo, `docker-compose.yml`, describe cómo deben configurarse y ejecutarse los contenedores, sus redes, volúmenes y otras dependencias. 
+Docker Compose simplifica el manejo de aplicaciones complejas al permitir la definición de múltiples servicios en un solo archivo. Este archivo, `docker-compose.yml`, describe cómo deben configurarse y ejecutarse los contenedores, sus redes, volúmenes y otras dependencias.
 
 Por ejemplo, en un stack MEAN (MongoDB, Express, Angular, Node.js), Docker Compose facilita la configuración y coordinación de todos los componentes necesarios. En lugar de iniciar y gestionar cada contenedor de forma independiente, Docker Compose permite hacerlo con un único comando, lo que optimiza y simplifica el flujo de trabajo.
 
@@ -2566,23 +2631,28 @@ Por ejemplo, en un stack MEAN (MongoDB, Express, Angular, Node.js), Docker Compo
 
 Docker Compose se incluye automáticamente en Docker Desktop para sistemas operativos Windows y macOS. Para Linux, la instalación debe realizarse manualmente. Aquí te dejo una guía rápida para cada plataforma:
 
-#### En Windows y macOS:
+#### En Windows y macOS
+
 Docker Compose ya está integrado en Docker Desktop. Solo necesitas instalar Docker Desktop para tener Docker Compose disponible.
 
-#### En Linux:
+#### En Linux
+
 Para instalar Docker Compose en Linux, sigue estos pasos:
 
 1. **Descarga la versión más reciente:**
+
    ```bash
    sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
    ```
 
 2. **Aplica permisos de ejecución:**
+
    ```bash
    sudo chmod +x /usr/local/bin/docker-compose
    ```
 
 3. **Verifica la instalación:**
+
    ```bash
    docker-compose --version
    ```
@@ -2641,27 +2711,32 @@ mi_servicio_web_1 | [Fecha y Hora] Mensaje del contenedor web
 ...
 ```
 
-En este ejemplo, `docker-compose up` inicia dos contenedores (`mi_servicio_db_1` y `mi_servicio_web_1`) y muestra sus logs en tiempo real. 
+En este ejemplo, `docker-compose up` inicia dos contenedores (`mi_servicio_db_1` y `mi_servicio_web_1`) y muestra sus logs en tiempo real.
 
 ##### Opciones Adicionales
 
 - **-d (Detached Mode):** Para ejecutar los contenedores en segundo plano, agrega el flag -d:
+
   ```bash
   docker-compose up -d
   ```
+
   Esto permite que los contenedores se ejecuten en el fondo, liberando la terminal para otros comandos.
 
 - **`--build`:** Para forzar la reconstrucción de las imágenes antes de iniciar los contenedores, utiliza:
+
   ```bash
   docker-compose up --build
   ```
 
 - **`--force-recreate`:** Para forzar la recreación de los contenedores, incluso si no ha habido cambios, usa:
+
   ```bash
   docker-compose up --force-recreate
   ```
 
 - **`--remove-orphans`:** Para eliminar contenedores que no están definidos en el archivo `docker-compose.yml` actual, puedes usar:
+
   ```bash
   docker-compose up --remove-orphans
   ```
@@ -2718,16 +2793,19 @@ En este ejemplo:
 ##### Opciones Adicionales
 
 - **`-q` (Quiet Mode):** Para mostrar solo los IDs de los contenedores sin información adicional, utiliza:
+
   ```bash
   docker-compose ps -q
   ```
 
 - **`--services`:** Para listar solo los nombres de los servicios (sin detalles de los contenedores), usa:
+
   ```bash
   docker-compose ps --services
   ```
 
 - **`--filter`:** Para filtrar la lista de contenedores según ciertos criterios, como el estado (por ejemplo, `status=running`):
+
   ```bash
   docker-compose ps --filter "status=running"
   ```
@@ -3477,9 +3555,10 @@ Define la versión de la sintaxis de Docker Compose que se está utilizando. Est
 
 ### 2. **services**
 
-Contiene todos los servicios que se van a ejecutar, cada uno con su propia configuración. 
+Contiene todos los servicios que se van a ejecutar, cada uno con su propia configuración.
 
 #### Ejemplo Básico
+
 ```yaml
 version: '3.8'
 services:
@@ -3501,18 +3580,20 @@ volumes:
 networks:
   webnet:
 ```
+
 > En este ejemplo:
+>
 > - `web` construye una imagen desde el Dockerfile en el directorio actual (`.`), expone el puerto 5000, y monta volúmenes locales.
 > - `redis` usa la imagen oficial de Redis.
 > - Ambos servicios están conectados a la red `webnet`.
 
 ---
 
-## Construcción y Ejecución de Docker-Compose
+### Construcción y Ejecución de Docker-Compose
 
 Una vez que tienes el archivo `docker-compose.yml`, puedes construir y ejecutar tus servicios de la siguiente manera:
 
-### Construir y Ejecutar Servicios
+#### Construir y Ejecutar Servicios
 
 ```bash
 # Construye y ejecuta los servicios definidos en el docker-compose.yml
@@ -3521,9 +3602,10 @@ docker-compose up
 # Ejecutar en modo background (detached)
 docker-compose up -d
 ```
+
 > La opción -d ejecuta los servicios en segundo plano, liberando la terminal para otras tareas.
 
-### Construcción de Servicios
+#### Construcción de Servicios
 
 ```bash
 # Solo construir los servicios sin iniciarlos
@@ -3534,18 +3616,19 @@ docker-compose build
 
 ---
 
-## Listar Micro Servicios
+### Listar Micro Servicios
 
 Para ver el estado de los servicios definidos en tu archivo `docker-compose.yml`:
 
 ```bash
 docker-compose ps
 ```
+
 > Este comando muestra todos los contenedores que Docker Compose está manejando, sus estados, puertos expuestos, y más.
 
 ---
 
-## Enlazar Contenedores, Servicios, Puertos y Variables
+### Enlazar Contenedores, Servicios, Puertos y Variables
 
 Un ejemplo más detallado de un archivo `docker-compose.yml` que enlaza servicios:
 
@@ -3571,13 +3654,15 @@ networks:
   default:
     driver: bridge
 ```
+
 > En este ejemplo:
+>
 > - `wordpress` se conecta al servicio `dbserver` usando la dirección `dbserver:3306`.
 > - `depends_on` garantiza que `dbserver` esté disponible antes de iniciar `wordpress`.
 
 ---
 
-## Volúmenes en Docker Compose
+### Volúmenes en Docker Compose
 
 Los volúmenes permiten compartir datos entre el host y los contenedores o entre contenedores. Aquí hay un ejemplo detallado:
 
@@ -3605,14 +3690,16 @@ volumes:
   mydata:
   dbdata:
 ```
+
 > En este ejemplo:
+>
 > - `mydata` es un volumen gestionado por Docker, montado en `/data` dentro del contenedor `web`.
 > - `./static` es un directorio en el host montado en `/opt/app/static` dentro del contenedor `web`.
 > - `dbdata` es otro volumen gestionado por Docker, utilizado por `db` para almacenar datos de PostgreSQL.
 
 ---
 
-## Redes en Docker Compose
+### Redes en Docker Compose
 
 Configurar redes personalizadas puede ser crucial para entornos más complejos. Ejemplo:
 
@@ -3652,45 +3739,51 @@ networks:
         - subnet: 172.16.238.0/24
         - subnet: 2001:3984:3989::/64
 ```
+
 > En este ejemplo:
+>
 > - `net3` es una red personalizada con configuración IP específica para `app` y `db`.
 > - `db` tiene una dirección IP fija y nombres de alias para la resolución dentro de la red.
 
 ---
 
-## Cambiar Nombre de Archivo y Proyecto de Docker-Compose
+### Cambiar Nombre de Archivo y Proyecto de Docker-Compose
 
-### Ocupar Fichero Docker-Compose con Otro Nombre
+#### Ocupar Fichero Docker-Compose con Otro Nombre
 
 ```bash
 docker-compose -f custom-compose.yml up
 ```
+
 > Esto ejecutará el archivo `custom-compose.yml` en lugar del predeterminado `docker-compose.yml`.
 
-### Cambiar Nombre del Proyecto
+#### Cambiar Nombre del Proyecto
 
 ```bash
 docker-compose -p custom_project_name up
 ```
+
 > Esto cambiará el nombre del proyecto para los servicios y contenedores, útil para evitar conflictos con otros proyectos.
 
-### Ejecutar con Nuevas Opciones
+#### Ejecutar con Nuevas Opciones
 
 ```bash
 docker-compose -f custom-compose.yml -p custom_project_name up
 ```
+
 > Combinando -f para especificar el archivo y `-p` para el nombre del proyecto.
 
-### Ver Lista con Nuevo Nombre de Proyecto
+#### Ver Lista con Nuevo Nombre de Proyecto
 
 ```bash
 docker-compose -p custom_project_name ps
 ```
+
 > Para listar los servicios con el nombre personalizado del proyecto.
 
 ---
 
-# Docker Registry: Creación, Uso y Almacenamiento
+## Docker Registry: Creación, Uso y Almacenamiento
 
 **Docker Registry** es una herramienta esencial para quienes desean tener su propio repositorio privado de imágenes Docker, en lugar de depender de Docker Hub. Esto es especialmente útil para empresas o equipos que necesitan un registro interno de imágenes para mantener sus datos seguros y gestionados de forma centralizada.
 
@@ -3698,9 +3791,9 @@ Aquí profundizo en la creación, uso y almacenamiento de imágenes en Docker Re
 
 ---
 
-## Crear un Registro de Imágenes
+### Crear un Registro de Imágenes
 
-### Descargar la Imagen del Registro
+#### Descargar la Imagen del Registro
 
 Para comenzar, necesitas descargar la imagen oficial de Docker Registry desde Docker Hub:
 
@@ -3708,7 +3801,7 @@ Para comenzar, necesitas descargar la imagen oficial de Docker Registry desde Do
 docker pull registry:latest
 ```
 
-### Crear un Contenedor de Registro
+#### Crear un Contenedor de Registro
 
 Una vez descargada la imagen, puedes crear y ejecutar un contenedor que actúe como tu registro privado. El puerto `5000` es el puerto predeterminado para Docker Registry, pero puedes elegir otro puerto si lo prefieres.
 
@@ -3720,9 +3813,9 @@ docker run -d -p 5000:5000 --name mi_registro registry
 
 ---
 
-## Subir y Descargar Imágenes
+#### Subir y Descargar Imágenes
 
-### Etiquetar la Imagen
+##### Etiquetar la Imagen
 
 Antes de subir una imagen a tu registro privado, necesitas etiquetarla para que apunte al registro correcto. La estructura del comando es la siguiente:
 
@@ -3730,7 +3823,7 @@ Antes de subir una imagen a tu registro privado, necesitas etiquetarla para que 
 docker tag <nombre_imagen_local> <direccion_registro>:<puerto>/<nombre_imagen>
 ```
 
-#### Ejemplo:
+###### Ejemplo
 
 ```bash
 docker tag ubuntu localhost:5000/nuevo-ubuntu
@@ -3738,11 +3831,11 @@ docker tag ubuntu localhost:5000/nuevo-ubuntu
 
 > **Nota:** No es recomendable usar `localhost` para un registro de producción; esto solo es útil para pruebas locales.
 
-### Subir Imagen al Registro
+#### Subir Imagen al Registro
 
 Para subir una imagen a tu registro privado, usa el comando `docker push` especificando la dirección del registro y el nombre de la imagen.
 
-#### Ejemplo:
+##### Ejemplo
 
 ```bash
 docker push localhost:5000/nuevo-ubuntu:latest
@@ -3754,7 +3847,7 @@ docker push localhost:5000/nuevo-ubuntu:latest
 
 Para descargar una imagen de tu registro privado, usa el comando `docker pull` especificando la dirección del registro y el nombre de la imagen.
 
-#### Ejemplo:
+#### Ejemplo
 
 ```bash
 docker pull localhost:5000/nuevo-ubuntu:latest
@@ -3762,9 +3855,9 @@ docker pull localhost:5000/nuevo-ubuntu:latest
 
 ---
 
-## Almacenamiento en Docker Registry
+### Almacenamiento en Docker Registry
 
-### Ubicación Predeterminada del Almacenamiento
+#### Ubicación Predeterminada del Almacenamiento
 
 Por defecto, Docker Registry almacena las imágenes en el directorio de volúmenes de Docker:
 
@@ -3778,11 +3871,11 @@ Puedes verificar la ubicación de almacenamiento actual con el comando:
 docker inspect mi_registro
 ```
 
-### Configurar Ubicación Personalizada del Almacenamiento
+#### Configurar Ubicación Personalizada del Almacenamiento
 
 Si deseas que Docker Registry almacene las imágenes en una ubicación específica en tu sistema, puedes montar un volumen en el contenedor al crearlo.
 
-#### Ejemplo:
+##### Ejemplo
 
 1. **Crear una Carpeta para el Almacenamiento**
 
@@ -3800,7 +3893,7 @@ Si deseas que Docker Registry almacene las imágenes en una ubicación específi
 
 ---
 
-### Configuración Adicional y Recomendaciones
+#### Configuración Adicional y Recomendaciones
 
 - **Seguridad:** Si tu registro se va a utilizar en un entorno de producción o accesible desde fuera de tu red local, asegúrate de configurarlo con HTTPS para asegurar la transmisión de datos.
 - **Autenticación:** Puedes configurar autenticación básica o usar un servicio de autenticación externo para proteger el acceso a tu registro.
