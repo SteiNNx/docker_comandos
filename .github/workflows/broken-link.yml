@@ -1,0 +1,17 @@
+name: Broken Link Checker README.md
+
+on: [push, pull_request]
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Check links in README.md
+        run: markdown-link-check README.md

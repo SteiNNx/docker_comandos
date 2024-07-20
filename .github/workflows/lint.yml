@@ -1,16 +1,22 @@
-name: Lint README
+name: Lint README.md
 
+# Disparar el flujo de trabajo en eventos de push y pull request
 on: [push, pull_request]
 
 jobs:
   lint:
+    # Definir la última versión de Ubuntu como el runner
     runs-on: ubuntu-latest
+
     steps:
+      # Paso 1: Clonar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Paso 2: Instalar markdownlint-cli globalmente usando npm
       - name: Install markdownlint
         run: npm install -g markdownlint-cli
 
+      # Paso 3: Ejecutar markdownlint en el archivo README.md
       - name: Lint README.md
         run: markdownlint README.md
