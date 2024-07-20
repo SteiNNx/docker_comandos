@@ -1,17 +1,22 @@
 name: Broken Link Checker README.md
 
+# Disparar el flujo de trabajo en eventos de push y pull request
 on: [push, pull_request]
 
 jobs:
   link-check:
+    # Definir la última versión de Ubuntu como el runner
     runs-on: ubuntu-latest
 
     steps:
+      # Paso 1: Clonar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Paso 2: Instalar markdown-link-check globalmente usando npm
       - name: Install markdown-link-check
         run: npm install -g markdown-link-check
 
+      # Paso 3: Verificar enlaces en el archivo README.md
       - name: Check links in README.md
         run: markdown-link-check README.md

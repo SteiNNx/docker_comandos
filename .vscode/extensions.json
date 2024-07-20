@@ -1,6 +1,8 @@
 {
     "recommendations": [
-        "davidanson.vscode-markdownlint",
-        "dbaeumer.vscode-eslint"
+        "davidanson.vscode-markdownlint", // Para la acción de linting Markdown
+        "streetsidesoftware.code-spell-checker", // Para la acción de verificación ortográfica
+        "yzhang.markdown-all-in-one", // Herramienta integral para Markdown
+        "dbaeumer.vscode-eslint" // Para la verificación de ESLint
     ]
 }

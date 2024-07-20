@@ -219,7 +219,7 @@ Bienvenido 🐳,este repositorio es un recurso abierto para la comunidad hispano
     - [Instalación de Docker Compose](#instalación-de-docker-compose)
       - [En Windows y macOS](#en-windows-y-macos)
       - [En Linux](#en-linux)
-    - [Commandos Docker-Compose](#commandos-docker-compose)
+    - [Comandos Docker-Compose](#comandos-docker-compose)
       - [`docker-compose up`](#docker-compose-up)
         - [¿Qué Hace el Comando `docker-compose up`?](#qué-hace-el-comando-docker-compose-up)
         - [Ejemplo de Uso](#ejemplo-de-uso-10)
@@ -2663,7 +2663,7 @@ Para obtener más detalles y la documentación completa, visita la [documentaci�
 
 Esta versión proporciona una visión más clara de lo que es Docker Compose y cómo se instala en diferentes sistemas operativos, ofreciendo un enfoque más estructurado y fácil de seguir.
 
-### Commandos Docker-Compose
+### Comandos Docker-Compose
 
 #### `docker-compose up`
 

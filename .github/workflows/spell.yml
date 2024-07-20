@@ -1,17 +1,22 @@
 name: Ortografia Check README.md
 
+# Disparar el flujo de trabajo en eventos de push y pull request
 on: [push, pull_request]
 
 jobs:
   spell-check:
+    # Definir la última versión de Ubuntu como el runner
     runs-on: ubuntu-latest
 
     steps:
+      # Paso 1: Clonar el repositorio
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Paso 2: Instalar cspell globalmente usando npm
       - name: Install cspell
         run: npm install -g cspell
 
+      # Paso 3: Ejecutar verificación ortográfica en el archivo README.md
       - name: Run spell check
         run: cspell "README.md"
