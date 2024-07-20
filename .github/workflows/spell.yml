@@ -1,7 +1,13 @@
-name: Ortografia Check README.md
+name: Orthography Check README.md
 
 # Disparar el flujo de trabajo en eventos de push y pull request
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   spell-check:
@@ -11,7 +17,7 @@ jobs:
     steps:
       # Paso 1: Clonar el repositorio
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Paso 2: Instalar cspell globalmente usando npm
       - name: Install cspell
